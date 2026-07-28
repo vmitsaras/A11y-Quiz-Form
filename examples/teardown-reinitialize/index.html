@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>Teardown and Reinitialize Lab | A11y Quiz Form</title>
+    <meta
+      name="description"
+      content="Inspect progressive enhancement, teardown cleanup, author-markup restoration, and reinitialization for A11y Quiz Form."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://vmitsaras.github.io/A11y-Quiz-Form/teardown-reinitialize/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="A11y Quiz Form">
+    <meta property="og:title" content="Teardown and Reinitialize Lab | A11y Quiz Form">
+    <meta
+      property="og:description"
+      content="Inspect progressive enhancement, teardown cleanup, author-markup restoration, and reinitialization for A11y Quiz Form."
+    >
+    <meta property="og:url" content="https://vmitsaras.github.io/A11y-Quiz-Form/teardown-reinitialize/">
+    <meta property="og:image" content="https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <meta
+      property="og:image:alt"
+      content="A11y Quiz Form social preview showing a progressively enhanced native HTML quiz."
+    >
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Teardown and Reinitialize Lab | A11y Quiz Form">
+    <meta
+      name="twitter:description"
+      content="Inspect progressive enhancement, teardown cleanup, author-markup restoration, and reinitialization for A11y Quiz Form."
+    >
+    <meta name="twitter:image" content="https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png">
+    <meta
+      name="twitter:image:alt"
+      content="A11y Quiz Form social preview showing a progressively enhanced native HTML quiz."
+    >
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/teardown-reinitialize/#webpage",
+          "url": "https://vmitsaras.github.io/A11y-Quiz-Form/teardown-reinitialize/",
+          "name": "Teardown and Reinitialize Lab | A11y Quiz Form",
+          "description": "Inspect progressive enhancement, teardown cleanup, author-markup restoration, and reinitialization for A11y Quiz Form.",
+          "inLanguage": "en",
+          "primaryImageOfPage": {
+            "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#primaryimage"
+          },
+          "isPartOf": {
+            "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#webpage"
+          },
+          "mainEntity": {
+            "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/teardown-reinitialize/#software"
+          },
+          "author": {
+            "@id": "https://github.com/vmitsaras/#person"
+          }
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#primaryimage",
+          "url": "https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png",
+          "contentUrl": "https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png",
+          "width": 1280,
+          "height": 640,
+          "caption": "A11y Quiz Form — accessible quiz behavior for progressively enhanced native forms."
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/teardown-reinitialize/#software",
+          "name": "A11y Quiz Form",
+          "description": "Accessible single- and multiple-answer quiz behavior for progressively enhanced native forms",
+          "version": "1.0.0",
+          "codeRepository": "https://github.com/vmitsaras/A11y-Quiz-Form",
+          "license": "https://github.com/vmitsaras/A11y-Quiz-Form/blob/main/LICENSE",
+          "programmingLanguage": [
+            "TypeScript",
+            "JavaScript"
+          ],
+          "runtimePlatform": "Browser",
+          "keywords": [
+            "accessibility",
+            "a11y",
+            "quiz",
+            "form",
+            "progressive enhancement",
+            "plugin lifecycle"
+          ],
+          "featureList": [
+            "Semantic quiz markup before JavaScript enhancement",
+            "Visible destroy cleanup audits",
+            "Exact author DOM comparison and optional restoration",
+            "Reinitialization after teardown"
+          ],
+          "author": {
+            "@id": "https://github.com/vmitsaras/#person"
+          },
+          "targetProduct": {
+            "@type": "SoftwareApplication",
+            "name": "A11y Quiz Form",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Any",
+            "runtimePlatform": "Browser"
+          },
+          "sameAs": [
+            "https://github.com/vmitsaras/A11y-Quiz-Form"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://github.com/vmitsaras/#person",
+          "name": "Vasileios Mitsaras",
+          "url": "https://github.com/vmitsaras/",
+          "sameAs": [
+            "https://github.com/vmitsaras/",
+            "https://linkedin.com/in/vasilis-mitsaras"
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="../../dist/styles.css">
+    <link rel="stylesheet" href="../../site-header.css">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" data-site-header>
+      <div class="site-header__inner">
+        <a class="site-header__logo" href="../../index.html">A11y Quiz Form</a>
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <ul class="site-header__links">
+            <li><a class="site-header__link" href="../../index.html#overview">Overview</a></li>
+            <li><a class="site-header__link" href="../../index.html#examples">Examples</a></li>
+            <li><a class="site-header__link" href="https://github.com/vmitsaras/A11y-Quiz-Form">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="demo-page" id="main">
+      <header class="demo-hero">
+        <p class="demo-hero__eyebrow">Personal utility · Lifecycle inspection</p>
+        <h1>Teardown and reinitialize lab</h1>
+        <p class="demo-hero__summary">
+          Interact with a progressively enhanced form, destroy its plugin instance, compare the
+          resulting DOM with the original author markup, and initialize it again.
+        </p>
+      </header>
+
+      <section class="demo-grid" aria-label="Scenario and test instructions">
+        <div class="demo-panel">
+          <h2>Scenario</h2>
+          <p>
+            A single-page application replaces or suspends a quiz view and needs evidence that
+            plugin listeners and authored markup can be handled safely across lifecycle changes.
+          </p>
+          <p><strong>User goal:</strong> inspect every lifecycle transition instead of trusting a hidden test.</p>
+        </div>
+        <div class="demo-panel">
+          <h2>Try it</h2>
+          <ol class="demo-try-list">
+            <li>Answer the quiz so generated state and feedback are visible.</li>
+            <li>Activate “Destroy and audit” and read both cleanup checks.</li>
+            <li>If the exact comparison fails, restore the captured author baseline.</li>
+            <li>Reinitialize and confirm the form works again with one listener set.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="demo-panel" aria-labelledby="controls-title">
+        <h2 id="controls-title">Lifecycle controls</h2>
+        <p>
+          These controls sit outside the quiz root. “Restore author baseline” is a host-page action;
+          it replaces the form with the pristine clone captured before initialization.
+        </p>
+        <div class="demo-toolbar">
+          <button class="demo-button" type="button" data-destroy>Destroy and audit</button>
+          <button class="demo-button demo-button--secondary" type="button" data-restore disabled>Restore author baseline</button>
+          <button class="demo-button demo-button--secondary" type="button" data-reinitialize disabled>Reinitialize</button>
+        </div>
+        <p class="demo-runtime-status" data-lifecycle-status role="status" aria-live="polite">
+          Plugin initialized from semantic author markup.
+        </p>
+        <div class="demo-grid" aria-label="Cleanup audit results">
+          <p class="demo-audit" data-artifact-audit>Lifecycle artifact audit has not run yet.</p>
+          <p class="demo-audit" data-exact-audit>Exact author-DOM comparison has not run yet.</p>
+        </div>
+      </section>
+
+      <section class="demo-stage demo-lifecycle-stage" aria-labelledby="quiz-title">
+        <h2 id="quiz-title">Progressively enhanced quiz</h2>
+        <p>
+          The complete fieldset, answers, labels, buttons, feedback containers, and no-script answer
+          are authored in HTML before the module initializes.
+        </p>
+
+        <div data-quiz-host>
+          <form class="a11y-quiz" id="lifecycle-quiz" data-a11y-quiz novalidate>
+            <fieldset class="a11y-quiz__fieldset">
+              <legend class="a11y-quiz__question">
+                What is the safest first choice for a disclosure trigger?
+              </legend>
+              <p class="a11y-quiz__instruction">Choose one answer.</p>
+              <details class="a11y-quiz__hint">
+                <summary>Need a hint?</summary>
+                <div class="a11y-quiz__hint-content"><p>Start with an element that already supports keyboard activation.</p></div>
+              </details>
+              <div class="a11y-quiz__answers">
+                <div class="a11y-quiz__answer" data-correct="true">
+                  <label class="a11y-quiz__answer-label">
+                    <input class="a11y-quiz__input" type="radio" name="disclosure-trigger" value="button">
+                    <span class="a11y-quiz__answer-text">A native <code>&lt;button&gt;</code></span>
+                  </label>
+                  <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                  <p class="a11y-quiz__explanation" hidden>A button supplies focusability and Enter/Space activation before disclosure state is added.</p>
+                </div>
+                <div class="a11y-quiz__answer" data-correct="false">
+                  <label class="a11y-quiz__answer-label">
+                    <input class="a11y-quiz__input" type="radio" name="disclosure-trigger" value="div">
+                    <span class="a11y-quiz__answer-text">A clickable <code>&lt;div&gt;</code></span>
+                  </label>
+                  <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                  <p class="a11y-quiz__explanation" hidden>A div needs focus, role, keyboard, and state behavior added manually.</p>
+                </div>
+              </div>
+              <p class="a11y-quiz__attempt-count" hidden></p>
+              <p class="a11y-quiz__status"></p>
+              <div class="a11y-quiz__actions">
+                <button type="submit">Check answer</button>
+                <button type="button" data-quiz-show-answer hidden>Show correct answer</button>
+                <button type="button" data-quiz-reset hidden>Reset quiz</button>
+              </div>
+              <div class="a11y-quiz__result-summary" hidden>
+                <p class="a11y-quiz__result-summary-heading" aria-hidden="true">Result</p>
+                <p class="a11y-quiz__result-summary-text"></p>
+              </div>
+            </fieldset>
+            <noscript>
+              <details class="a11y-quiz__noscript">
+                <summary>Show the answer without JavaScript</summary>
+                <p>The safest first choice is a native <code>&lt;button&gt;</code>.</p>
+              </details>
+            </noscript>
+          </form>
+        </div>
+      </section>
+
+      <section class="demo-grid" aria-label="Accessibility and developer notes">
+        <div class="demo-panel">
+          <h2>Accessibility notes</h2>
+          <ul class="demo-note-list">
+            <li>The authored form remains meaningful before enhancement and includes a no-JavaScript answer fallback.</li>
+            <li>Lifecycle controls are real buttons with a separate polite status region.</li>
+            <li>After a lifecycle action, focus remains on the activating external button.</li>
+            <li>Audit results use explicit pass/fail text and do not rely on color.</li>
+            <li>The page has no required motion and preserves package forced-colors behavior.</li>
+            <li>Exact DOM equality is stricter than functional cleanup and may expose residual enhanced attributes or content.</li>
+          </ul>
+        </div>
+        <div class="demo-panel">
+          <h2>Developer notes</h2>
+          <p>
+            The root selector is <code>#lifecycle-quiz[data-a11y-quiz]</code>. The demo captures
+            <code>outerHTML</code> and a deep clone before calling <code>createQuizForm()</code>.
+          </p>
+          <pre><code>instance.destroy();
+const exactMatch = form.outerHTML === baselineMarkup;
+
+// Optional host-level restoration:
+host.replaceChildren(baselineClone.cloneNode(true));</code></pre>
+          <p>
+            Reinitialization calls <code>createQuizForm()</code> on the current form. The page imports
+            only <code>../../dist/index.js</code> and <code>../../dist/styles.css</code>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="demo-footer" data-demo-footer>
+      <div class="demo-footer__inner">
+        <div class="demo-footer__brand">
+          <p class="demo-footer__eyebrow">Accessibility plugin demo</p>
+          <p class="demo-footer__credit">
+            <span class="demo-footer__plugin">A11y Quiz Form</span>
+            <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+            Built by <a class="demo-footer__link" href="https://github.com/vmitsaras/">Vasileios Mitsaras</a>
+            <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+            <a class="demo-footer__link" href="https://linkedin.com/in/vasilis-mitsaras">LinkedIn profile</a>
+          </p>
+          <p class="demo-footer__meta"><span>a11y-quiz-form</span><span class="demo-footer__separator" aria-hidden="true">&middot;</span><span>MIT License</span></p>
+        </div>
+        <nav class="demo-footer__nav" aria-label="Project links">
+          <ul class="demo-footer__links">
+            <li class="demo-footer__item"><a class="demo-footer__link" href="https://github.com/vmitsaras/A11y-Quiz-Form">GitHub repository</a></li>
+            <li class="demo-footer__item"><a class="demo-footer__link" href="https://www.npmjs.com/package/a11y-quiz-form">npm package</a></li>
+            <li class="demo-footer__item"><a class="demo-footer__link" href="https://vmitsaras.github.io/A11y-Quiz-Form/">Documentation</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { createQuizForm } from "../../dist/index.js";
+
+      const host = document.querySelector("[data-quiz-host]");
+      const destroyButton = document.querySelector("[data-destroy]");
+      const restoreButton = document.querySelector("[data-restore]");
+      const reinitializeButton = document.querySelector("[data-reinitialize]");
+      const lifecycleStatus = document.querySelector("[data-lifecycle-status]");
+      const artifactAudit = document.querySelector("[data-artifact-audit]");
+      const exactAudit = document.querySelector("[data-exact-audit]");
+
+      let quizForm = host?.querySelector("#lifecycle-quiz");
+      const baselineClone = quizForm?.cloneNode(true);
+      const baselineMarkup = quizForm?.outerHTML ?? "";
+      let instance;
+
+      function setAudit(element, passed, message) {
+        if (!element) return;
+        element.dataset.result = passed ? "pass" : "fail";
+        element.textContent = `${passed ? "Pass" : "Needs review"}: ${message}`;
+      }
+
+      function initialize() {
+        if (!(quizForm instanceof HTMLFormElement)) return;
+        instance = createQuizForm(quizForm, { maxAttempts: 2, showProgress: true });
+        destroyButton.disabled = false;
+        reinitializeButton.disabled = true;
+        lifecycleStatus.textContent = "Plugin initialized. Interact with the quiz, then destroy and audit it.";
+      }
+
+      function runCleanupAudit() {
+        if (!(quizForm instanceof HTMLFormElement)) return;
+        const hasLifecycleArtifacts = Boolean(
+          quizForm.matches(".is-initialized, [data-quiz-state]") ||
+          quizForm.querySelector(
+            ".is-correct, .is-incorrect, .is-selected, .is-previously-selected, .a11y-quiz__answer-status, .a11y-quiz__validation, .a11y-quiz__progress",
+          ),
+        );
+        const exactMatch = quizForm.outerHTML === baselineMarkup;
+
+        setAudit(
+          artifactAudit,
+          !hasLifecycleArtifacts,
+          hasLifecycleArtifacts
+            ? "plugin lifecycle classes, state attributes, or generated nodes remain."
+            : "plugin lifecycle classes, state attributes, and generated nodes were removed.",
+        );
+        setAudit(
+          exactAudit,
+          exactMatch,
+          exactMatch
+            ? "the current form markup exactly matches the captured author baseline."
+            : "the current form differs from the captured author baseline; use the host restore action to compare a pristine copy.",
+        );
+      }
+
+      destroyButton?.addEventListener("click", () => {
+        instance?.destroy();
+        instance = undefined;
+        runCleanupAudit();
+        destroyButton.disabled = true;
+        restoreButton.disabled = false;
+        reinitializeButton.disabled = false;
+        lifecycleStatus.textContent = "Plugin destroyed and both DOM cleanup checks completed.";
+      });
+
+      restoreButton?.addEventListener("click", () => {
+        if (!host || !(baselineClone instanceof HTMLFormElement)) return;
+        instance?.destroy();
+        instance = undefined;
+        quizForm = baselineClone.cloneNode(true);
+        host.replaceChildren(quizForm);
+        const exactMatch = quizForm.outerHTML === baselineMarkup;
+        setAudit(artifactAudit, true, "the pristine author form contains no plugin lifecycle artifacts.");
+        setAudit(exactAudit, exactMatch, "the host-restored form exactly matches the captured author baseline.");
+        destroyButton.disabled = true;
+        restoreButton.disabled = true;
+        reinitializeButton.disabled = false;
+        lifecycleStatus.textContent = "Pristine author markup restored by the host page. The form is ready to reinitialize.";
+      });
+
+      reinitializeButton?.addEventListener("click", () => {
+        initialize();
+        restoreButton.disabled = true;
+        artifactAudit.removeAttribute("data-result");
+        exactAudit.removeAttribute("data-result");
+        artifactAudit.textContent = "Lifecycle artifact audit is ready for another teardown.";
+        exactAudit.textContent = "Exact author-DOM comparison is ready for another teardown.";
+      });
+
+      initialize();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+@import url("../demo-shell.css");
+
+:root {
+  --demo-accent: #a13a2a;
+  --demo-accent-strong: #702116;
+  --demo-accent-soft: #fff0e8;
+  --demo-canvas: #f8f3ee;
+}
+
+.demo-localization-stage {
+  border-block-start: 0.35rem solid var(--demo-accent);
+}
+
+.demo-language-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block: 0 1.25rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--demo-accent) 30%, white);
+  border-radius: 999px;
+  color: var(--demo-accent-strong);
+  background: var(--demo-accent-soft);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.demo-language-note code {
+  color: inherit;
+  background: transparent;
+}
+
+@media (forced-colors: active) {
+  .demo-language-note {
+    border-color: CanvasText;
+  }
+}

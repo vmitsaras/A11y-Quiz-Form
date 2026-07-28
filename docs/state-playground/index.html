@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>Quiz State Playground | A11y Quiz Form</title>
+    <meta
+      name="description"
+      content="Apply mode and option presets to a progressively enhanced quiz while keeping demo configuration outside the plugin form."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://vmitsaras.github.io/A11y-Quiz-Form/state-playground/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="A11y Quiz Form">
+    <meta property="og:title" content="Quiz State Playground | A11y Quiz Form">
+    <meta
+      property="og:description"
+      content="Apply mode and option presets to a progressively enhanced quiz while keeping demo configuration outside the plugin form."
+    >
+    <meta property="og:url" content="https://vmitsaras.github.io/A11y-Quiz-Form/state-playground/">
+    <meta property="og:image" content="https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <meta
+      property="og:image:alt"
+      content="A11y Quiz Form social preview showing a progressively enhanced native HTML quiz."
+    >
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quiz State Playground | A11y Quiz Form">
+    <meta
+      name="twitter:description"
+      content="Apply mode and option presets to a progressively enhanced quiz while keeping demo configuration outside the plugin form."
+    >
+    <meta name="twitter:image" content="https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png">
+    <meta
+      name="twitter:image:alt"
+      content="A11y Quiz Form social preview showing a progressively enhanced native HTML quiz."
+    >
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/state-playground/#webpage",
+          "url": "https://vmitsaras.github.io/A11y-Quiz-Form/state-playground/",
+          "name": "Quiz State Playground | A11y Quiz Form",
+          "description": "Apply mode and option presets to a progressively enhanced quiz while keeping demo configuration outside the plugin form.",
+          "inLanguage": "en",
+          "primaryImageOfPage": {
+            "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#primaryimage"
+          },
+          "isPartOf": {
+            "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#webpage"
+          },
+          "mainEntity": {
+            "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/state-playground/#software"
+          },
+          "author": {
+            "@id": "https://github.com/vmitsaras/#person"
+          }
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#primaryimage",
+          "url": "https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png",
+          "contentUrl": "https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png",
+          "width": 1280,
+          "height": 640,
+          "caption": "A11y Quiz Form — accessible quiz behavior for progressively enhanced native forms."
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/state-playground/#software",
+          "name": "A11y Quiz Form",
+          "description": "Accessible single- and multiple-answer quiz behavior for progressively enhanced native forms",
+          "version": "1.0.0",
+          "codeRepository": "https://github.com/vmitsaras/A11y-Quiz-Form",
+          "license": "https://github.com/vmitsaras/A11y-Quiz-Form/blob/main/LICENSE",
+          "programmingLanguage": [
+            "TypeScript",
+            "JavaScript"
+          ],
+          "runtimePlatform": "Browser",
+          "keywords": [
+            "accessibility",
+            "a11y",
+            "quiz",
+            "form",
+            "progressive enhancement",
+            "quiz state"
+          ],
+          "featureList": [
+            "Practice, exam, and review modes",
+            "Guided retry, strict check, and explore presets",
+            "Runtime state, mode, attempts, selection, and preset readout",
+            "Destroy and reinitialize sequencing for configuration changes"
+          ],
+          "author": {
+            "@id": "https://github.com/vmitsaras/#person"
+          },
+          "targetProduct": {
+            "@type": "SoftwareApplication",
+            "name": "A11y Quiz Form",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Any",
+            "runtimePlatform": "Browser"
+          },
+          "sameAs": [
+            "https://github.com/vmitsaras/A11y-Quiz-Form"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://github.com/vmitsaras/#person",
+          "name": "Vasileios Mitsaras",
+          "url": "https://github.com/vmitsaras/",
+          "sameAs": [
+            "https://github.com/vmitsaras/",
+            "https://linkedin.com/in/vasilis-mitsaras"
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="../dist/styles.css">
+    <link rel="stylesheet" href="../site-header.css">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" data-site-header>
+      <div class="site-header__inner">
+        <a class="site-header__logo" href="../index.html">A11y Quiz Form</a>
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <ul class="site-header__links">
+            <li><a class="site-header__link" href="../index.html#overview">Overview</a></li>
+            <li><a class="site-header__link" href="../index.html#examples">Examples</a></li>
+            <li><a class="site-header__link" href="https://github.com/vmitsaras/A11y-Quiz-Form">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="demo-page" id="main">
+      <header class="demo-hero">
+        <p class="demo-hero__eyebrow">SaaS control room · Runtime options</p>
+        <h1>Quiz state playground</h1>
+        <p class="demo-hero__summary">
+          Select a mode and an option preset, apply the configuration, then exercise the quiz.
+          The configuration panel stays outside the plugin root so it cannot be mistaken for runtime markup.
+        </p>
+      </header>
+
+      <section class="demo-grid" aria-label="Scenario and test instructions">
+        <div class="demo-panel">
+          <h2>Scenario</h2>
+          <p>
+            A developer is comparing product requirements before committing configuration to an
+            assessment screen.
+          </p>
+          <p><strong>User goal:</strong> observe how mode and feedback options change interaction state.</p>
+        </div>
+        <div class="demo-panel">
+          <h2>Try it</h2>
+          <ol class="demo-try-list">
+            <li>Apply each preset in practice mode and submit a wrong answer.</li>
+            <li>Switch to exam mode and confirm the effective attempt limit becomes one.</li>
+            <li>Switch to review mode and inspect the revealed, read-only state.</li>
+            <li>Watch the runtime readout after selection, checking, reset, and configuration changes.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="demo-panel demo-configurator" aria-labelledby="config-title">
+        <h2 id="config-title">Demo configuration</h2>
+        <p id="config-help">
+          These controls belong to the demo shell. Changes take effect only when you activate
+          “Apply configuration.”
+        </p>
+
+        <form data-playground-controls aria-describedby="config-help">
+          <div class="demo-control-grid">
+            <div class="demo-control">
+              <label for="mode">Quiz mode</label>
+              <select id="mode" name="mode">
+                <option value="practice">Practice</option>
+                <option value="exam">Exam</option>
+                <option value="review">Review</option>
+              </select>
+            </div>
+
+            <fieldset class="demo-control demo-preset-list">
+              <legend>Option preset</legend>
+              <label>
+                <input type="radio" name="preset" value="guided" checked>
+                <span>Guided retry — three attempts, progress, targeted feedback</span>
+              </label>
+              <label>
+                <input type="radio" name="preset" value="strict">
+                <span>Strict check — one attempt, no answer reveal</span>
+              </label>
+              <label>
+                <input type="radio" name="preset" value="explore">
+                <span>Explore — immediate explanations and answer reveal</span>
+              </label>
+            </fieldset>
+          </div>
+
+          <button class="demo-button" type="submit">Apply configuration</button>
+          <p class="demo-runtime-status" data-config-status role="status" aria-live="polite">
+            Guided retry preset applied in practice mode.
+          </p>
+        </form>
+      </section>
+
+      <section class="demo-stage" aria-labelledby="playground-title">
+        <h2 id="playground-title">Runtime quiz</h2>
+        <p>
+          This form is the complete plugin root. It does not contain or query the configurator above.
+        </p>
+
+        <form class="a11y-quiz" id="playground-quiz" data-a11y-quiz novalidate>
+          <fieldset class="a11y-quiz__fieldset">
+            <legend class="a11y-quiz__question">
+              Which technique provides a visible keyboard focus indicator?
+            </legend>
+            <p class="a11y-quiz__instruction">Choose one answer.</p>
+            <details class="a11y-quiz__hint">
+              <summary>Need a hint?</summary>
+              <div class="a11y-quiz__hint-content">
+                <p>Look for a selector designed for keyboard-visible focus treatment.</p>
+              </div>
+            </details>
+            <div class="a11y-quiz__answers">
+              <div class="a11y-quiz__answer" data-correct="true">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="focus-technique" value="focus-visible">
+                  <span class="a11y-quiz__answer-text"><code>:focus-visible</code> with a high-contrast outline</span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>This selector can expose a clear indicator when keyboard focus should be visible.</p>
+              </div>
+              <div class="a11y-quiz__answer" data-correct="false">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="focus-technique" value="outline-none">
+                  <span class="a11y-quiz__answer-text"><code>outline: none</code> with no replacement</span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>Removing the default outline without a replacement hides focus location.</p>
+              </div>
+              <div class="a11y-quiz__answer" data-correct="false">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="focus-technique" value="hover">
+                  <span class="a11y-quiz__answer-text">A hover-only color change</span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>Hover does not communicate the position of keyboard focus.</p>
+              </div>
+            </div>
+            <p class="a11y-quiz__attempt-count" hidden></p>
+            <p class="a11y-quiz__status"></p>
+            <div class="a11y-quiz__actions">
+              <button type="submit">Check answer</button>
+              <button type="button" data-quiz-show-answer hidden>Show correct answer</button>
+              <button type="button" data-quiz-reset hidden>Reset quiz</button>
+            </div>
+            <div class="a11y-quiz__result-summary" hidden>
+              <p class="a11y-quiz__result-summary-heading" aria-hidden="true">Result</p>
+              <p class="a11y-quiz__result-summary-text"></p>
+            </div>
+          </fieldset>
+        </form>
+
+        <h3>Runtime readout</h3>
+        <dl class="demo-state-readout" data-state-readout>
+          <div><dt>State</dt><dd data-state>idle</dd></div>
+          <div><dt>Mode</dt><dd data-effective-mode>practice</dd></div>
+          <div><dt>Attempts</dt><dd data-attempts>0 / 3</dd></div>
+          <div><dt>Selected</dt><dd data-selected>None</dd></div>
+          <div><dt>Preset</dt><dd data-preset>Guided retry</dd></div>
+        </dl>
+      </section>
+
+      <section class="demo-grid" aria-label="Accessibility and developer notes">
+        <div class="demo-panel">
+          <h2>Accessibility notes</h2>
+          <ul class="demo-note-list">
+            <li>The configurator and quiz are separate, labeled forms with independent submit actions.</li>
+            <li>Native radios, select, fieldset, legend, and buttons retain their browser keyboard behavior.</li>
+            <li>Configuration changes and quiz feedback use separate polite status regions.</li>
+            <li>Applying a preset does not move focus; focus stays on the apply button.</li>
+            <li>The readout repeats state as text, and the page has no required motion.</li>
+            <li>Review mode is intentionally read-only; exam mode is behavioral, not secure assessment infrastructure.</li>
+          </ul>
+        </div>
+        <div class="demo-panel">
+          <h2>Developer notes</h2>
+          <p>
+            The runtime root is <code>#playground-quiz[data-a11y-quiz]</code>. The configurator uses
+            <code>[data-playground-controls]</code> and is never passed to the plugin.
+          </p>
+          <pre><code>activeQuiz?.destroy();
+quizForm.reset();
+activeQuiz = createQuizForm(quizForm, options);</code></pre>
+          <p>
+            The page imports the built API from <code>../dist/index.js</code> and package styles
+            from <code>../dist/styles.css</code>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="demo-footer" data-demo-footer>
+      <div class="demo-footer__inner">
+        <div class="demo-footer__brand">
+          <p class="demo-footer__eyebrow">Accessibility plugin demo</p>
+          <p class="demo-footer__credit">
+            <span class="demo-footer__plugin">A11y Quiz Form</span>
+            <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+            Built by <a class="demo-footer__link" href="https://github.com/vmitsaras/">Vasileios Mitsaras</a>
+            <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+            <a class="demo-footer__link" href="https://linkedin.com/in/vasilis-mitsaras">LinkedIn profile</a>
+          </p>
+          <p class="demo-footer__meta"><span>a11y-quiz-form</span><span class="demo-footer__separator" aria-hidden="true">&middot;</span><span>MIT License</span></p>
+        </div>
+        <nav class="demo-footer__nav" aria-label="Project links">
+          <ul class="demo-footer__links">
+            <li class="demo-footer__item"><a class="demo-footer__link" href="https://github.com/vmitsaras/A11y-Quiz-Form">GitHub repository</a></li>
+            <li class="demo-footer__item"><a class="demo-footer__link" href="https://www.npmjs.com/package/a11y-quiz-form">npm package</a></li>
+            <li class="demo-footer__item"><a class="demo-footer__link" href="https://vmitsaras.github.io/A11y-Quiz-Form/">Documentation</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module">
+      import {
+        createQuizForm,
+        onQuizFormEvent,
+        quizFormEvents,
+      } from "../dist/index.js";
+
+      const controls = document.querySelector("[data-playground-controls]");
+      const quizForm = document.querySelector("#playground-quiz");
+      const configStatus = document.querySelector("[data-config-status]");
+      const stateOutput = document.querySelector("[data-state]");
+      const modeOutput = document.querySelector("[data-effective-mode]");
+      const attemptsOutput = document.querySelector("[data-attempts]");
+      const selectedOutput = document.querySelector("[data-selected]");
+      const presetOutput = document.querySelector("[data-preset]");
+
+      const presets = {
+        guided: {
+          label: "Guided retry",
+          options: {
+            maxAttempts: 3,
+            showProgress: true,
+            explanationMode: "selected-after-wrong",
+            showAnswerMode: "after-first-wrong",
+          },
+        },
+        strict: {
+          label: "Strict check",
+          options: {
+            maxAttempts: 1,
+            showProgress: false,
+            explanationMode: "all-after-final",
+            showAnswerMode: "never",
+          },
+        },
+        explore: {
+          label: "Explore",
+          options: {
+            maxAttempts: 2,
+            showProgress: true,
+            explanationMode: "all-immediate",
+            showAnswerMode: "always",
+            disableAfterComplete: false,
+          },
+        },
+      };
+
+      let activeQuiz;
+      let activePreset = presets.guided;
+
+      function updateReadout() {
+        if (!activeQuiz) return;
+        const state = activeQuiz.getState();
+        stateOutput.textContent = state.state;
+        modeOutput.textContent = activeQuiz.options.mode;
+        attemptsOutput.textContent = `${state.attempts} / ${state.maxAttempts}`;
+        selectedOutput.textContent = state.selected.length > 0 ? state.selected.join(", ") : "None";
+        presetOutput.textContent = activePreset.label;
+      }
+
+      function applyConfiguration(mode = "practice", presetKey = "guided") {
+        if (!(quizForm instanceof HTMLFormElement)) return;
+        activeQuiz?.destroy();
+        quizForm.reset();
+        activePreset = presets[presetKey] ?? presets.guided;
+        activeQuiz = createQuizForm(quizForm, { mode, ...activePreset.options });
+        updateReadout();
+
+        if (configStatus) {
+          configStatus.textContent = `${activePreset.label} preset applied in ${activeQuiz.options.mode} mode.`;
+        }
+      }
+
+      if (quizForm instanceof HTMLFormElement) {
+        for (const eventName of [
+          quizFormEvents.change,
+          quizFormEvents.check,
+          quizFormEvents.reset,
+          quizFormEvents.complete,
+          quizFormEvents.ready,
+        ]) {
+          onQuizFormEvent(quizForm, eventName, updateReadout);
+        }
+      }
+
+      if (controls instanceof HTMLFormElement) {
+        controls.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const data = new FormData(controls);
+          applyConfiguration(String(data.get("mode") ?? "practice"), String(data.get("preset") ?? "guided"));
+        });
+      }
+
+      applyConfiguration();
+    </script>
+  </body>
+</html>

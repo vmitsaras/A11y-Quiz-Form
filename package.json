@@ -1,0 +1,70 @@
+{
+  "name": "a11y-quiz-form",
+  "version": "1.0.0",
+  "description": "Accessible single- and multiple-answer quiz behavior for progressively enhanced native forms",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./docs": {
+      "types": "./dist/docs.d.ts",
+      "import": "./dist/docs.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run pages:build",
+    "build:dist": "npm run clean && tsdown && npm run copy:assets",
+    "copy:assets": "node -e \"const fs = require('node:fs'); if (fs.existsSync('src/styles.css')) { fs.mkdirSync('dist', { recursive: true }); fs.copyFileSync('src/styles.css', 'dist/styles.css'); }\"",
+    "pages:generate": "node scripts/build-pages.mjs",
+    "pages:build": "npm run build:dist && npm run pages:generate",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "pack:check": "npm pack --dry-run --cache ./.npm-cache",
+    "prepack": "npm run build:dist",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "npm run test && npm run typecheck && npm run build:dist && changeset publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmitsaras/A11y-Quiz-Form.git"
+  },
+  "keywords": [
+    "accessibility",
+    "a11y",
+    "quiz",
+    "form",
+    "progressive-enhancement",
+    "typescript"
+  ],
+  "author": "Vasileios Mitsaras",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vmitsaras/A11y-Quiz-Form/issues"
+  },
+  "homepage": "https://vmitsaras.github.io/A11y-Quiz-Form/",
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "jsdom": "^29.1.1",
+    "tsdown": "^0.15.8",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  }
+}

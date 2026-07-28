@@ -1,0 +1,102 @@
+@import url("../demo-shell.css");
+
+:root {
+  --demo-accent: #0f766e;
+  --demo-accent-strong: #115e59;
+  --demo-accent-soft: #e7f8f5;
+  --demo-canvas: #f0f7f6;
+}
+
+.demo-refresh-stage {
+  border-block-start: 0.35rem solid var(--demo-accent);
+}
+
+.demo-refresh-workspace {
+  display: grid;
+  gap: 1.25rem;
+  align-items: start;
+  margin-block: 1.25rem;
+}
+
+.demo-refresh-workspace > .demo-panel,
+.demo-refresh-workspace > .demo-stage {
+  margin-block: 0;
+}
+
+.demo-refresh-stage > .demo-callout {
+  color: var(--demo-ink);
+}
+
+.demo-facts dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 1px;
+  padding: 1px;
+  margin: 0;
+  background: var(--demo-border);
+}
+
+.demo-facts dl > div {
+  min-width: 0;
+  padding: 0.9rem;
+  background: var(--demo-surface);
+}
+
+.demo-facts dt {
+  color: var(--demo-muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.demo-facts dd {
+  margin: 0.25rem 0 0;
+  overflow-wrap: anywhere;
+  font-weight: 700;
+}
+
+.demo-lab-options {
+  display: grid;
+  gap: 0.65rem;
+  margin-block: 1rem;
+}
+
+.demo-lab-options label {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  max-width: 42rem;
+  font-weight: 650;
+}
+
+.demo-lab-options input {
+  flex: 0 0 auto;
+  margin-block-start: 0.3rem;
+}
+
+.demo-event-log {
+  min-block-size: 10rem;
+}
+
+@media (min-width: 56rem) {
+  .demo-refresh-workspace {
+    grid-template-columns: minmax(16rem, 1fr) minmax(0, 2fr);
+  }
+
+  .demo-refresh-controls .demo-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .demo-refresh-controls .demo-button {
+    width: 100%;
+  }
+}
+
+@media (forced-colors: active) {
+  .demo-facts dl,
+  .demo-facts dl > div {
+    border: 1px solid CanvasText;
+  }
+}

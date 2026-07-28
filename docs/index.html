@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <title>Accessible Quiz Form Demo &amp; API | A11y Quiz Form</title>
+  <meta
+    name="description"
+    content="Build accessible single- and multiple-answer quizzes with native forms, retry feedback, practice, exam, and review modes, and no framework dependency."
+  >
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://vmitsaras.github.io/A11y-Quiz-Form/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="A11y Quiz Form">
+  <meta property="og:title" content="Accessible Quiz Form Demo &amp; API | A11y Quiz Form">
+  <meta
+    property="og:description"
+    content="Build accessible single- and multiple-answer quizzes with native forms, retry feedback, practice, exam, and review modes, and no framework dependency."
+  >
+  <meta property="og:url" content="https://vmitsaras.github.io/A11y-Quiz-Form/">
+  <meta property="og:image" content="https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta
+    property="og:image:alt"
+    content="A11y Quiz Form social preview showing a progressively enhanced native HTML quiz."
+  >
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Accessible Quiz Form Demo &amp; API | A11y Quiz Form">
+  <meta
+    name="twitter:description"
+    content="Build accessible single- and multiple-answer quizzes with native forms, retry feedback, practice, exam, and review modes, and no framework dependency."
+  >
+  <meta name="twitter:image" content="https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png">
+  <meta
+    name="twitter:image:alt"
+    content="A11y Quiz Form social preview showing a progressively enhanced native HTML quiz."
+  >
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#webpage",
+        "url": "https://vmitsaras.github.io/A11y-Quiz-Form/",
+        "name": "Accessible Quiz Form Demo & API | A11y Quiz Form",
+        "description": "Build accessible single- and multiple-answer quizzes with native forms, retry feedback, practice, exam, and review modes, and no framework dependency.",
+        "inLanguage": "en",
+        "primaryImageOfPage": {
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#primaryimage"
+        },
+        "mainEntity": {
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#software"
+        },
+        "author": {
+          "@id": "https://github.com/vmitsaras/#person"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#primaryimage",
+        "url": "https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png",
+        "contentUrl": "https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png",
+        "width": 1280,
+        "height": 640,
+        "caption": "A11y Quiz Form — accessible quiz behavior for progressively enhanced native forms."
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#software",
+        "name": "A11y Quiz Form",
+        "description": "Accessible single- and multiple-answer quiz behavior for progressively enhanced native forms",
+        "version": "1.0.0",
+        "codeRepository": "https://github.com/vmitsaras/A11y-Quiz-Form",
+        "license": "https://github.com/vmitsaras/A11y-Quiz-Form/blob/main/LICENSE",
+        "programmingLanguage": [
+          "TypeScript",
+          "JavaScript"
+        ],
+        "runtimePlatform": "Browser",
+        "keywords": [
+          "accessibility",
+          "a11y",
+          "quiz",
+          "form",
+          "progressive enhancement",
+          "typescript"
+        ],
+        "featureList": [
+          "Single- and multiple-answer quiz scoring",
+          "Practice, exam, and review modes",
+          "Progressive enhancement of native HTML forms",
+          "Visible and announced answer feedback"
+        ],
+        "author": {
+          "@id": "https://github.com/vmitsaras/#person"
+        },
+        "targetProduct": {
+          "@type": "SoftwareApplication",
+          "name": "A11y Quiz Form",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Any",
+          "runtimePlatform": "Browser"
+        },
+        "sameAs": [
+          "https://github.com/vmitsaras/A11y-Quiz-Form"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://github.com/vmitsaras/#person",
+        "name": "Vasileios Mitsaras",
+        "url": "https://github.com/vmitsaras/",
+        "sameAs": [
+          "https://github.com/vmitsaras/",
+          "https://linkedin.com/in/vasilis-mitsaras"
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="./dist/styles.css">
+  <link rel="stylesheet" href="./site-header.css">
+  <style>
+    /* Demo documentation styles — not part of the package stylesheet. */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      color-scheme: light;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #f5f6f8;
+      margin: 0;
+    }
+
+    .demo-page {
+      width: min(100%, 76rem);
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 4vw, 2rem);
+    }
+
+    .demo-header {
+      padding-block: clamp(3rem, 10vw, 6rem) 2.5rem;
+    }
+
+    .demo-header__title {
+      max-width: 14ch;
+      font-size: clamp(2.25rem, 8vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      margin: 0 0 1rem;
+    }
+
+    .demo-header__description {
+      color: #595959;
+      max-width: 48rem;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      margin-block: 0;
+    }
+
+    .demo-header__links,
+    .demo-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      margin-block-start: 1.5rem;
+    }
+
+    .demo-header__links a {
+      display: inline-flex;
+      min-block-size: 2.75rem;
+      align-items: center;
+      padding: 0.6rem 1rem;
+      border: 2px solid #005fcc;
+      border-radius: 0.4rem;
+      color: #005fcc;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .demo-header__links a:first-child {
+      color: #fff;
+      background: #005fcc;
+    }
+
+    .demo-nav {
+      padding-block: 1rem;
+      border-block: 1px solid #d5d8de;
+    }
+
+    .demo-nav a,
+    .demo-section a {
+      color: #004f9f;
+      text-decoration-thickness: 0.12em;
+      text-underline-offset: 0.18em;
+    }
+
+    .demo-section {
+      margin-block: 2rem;
+      padding: clamp(1.25rem, 4vw, 2.25rem);
+      border: 1px solid #d8dbe1;
+      border-radius: 0.75rem;
+      background: #fff;
+    }
+
+    .demo-section__title {
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-block: 0 0.75rem;
+    }
+
+    .demo-section__intro {
+      max-width: 68ch;
+      color: #4b4b4b;
+      margin-block: 0 1.5rem;
+    }
+
+    .demo-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: #e5e5e5;
+      color: #595959;
+      border-radius: 0.25rem;
+      padding: 0.1em 0.5em;
+      margin-block-end: 0.75rem;
+    }
+
+    .demo-badge--exam {
+      background: #fce8e8;
+      color: #7f1d1d;
+    }
+
+    .demo-badge--review {
+      background: #e6f4ea;
+      color: #0d5723;
+    }
+
+    .demo-badge--multi {
+      background: #e8f0fe;
+      color: #164aa5;
+    }
+
+    .demo-facts dl {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+      gap: 1px;
+      padding: 1px;
+      margin: 0;
+      background: #d8dbe1;
+    }
+
+    .demo-facts dl > div {
+      min-width: 0;
+      padding: 1rem;
+      background: #fff;
+    }
+
+    .demo-facts dt {
+      font-weight: 800;
+    }
+
+    .demo-facts dd {
+      margin: 0.25rem 0 0;
+      overflow-wrap: anywhere;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+      gap: 1.25rem;
+    }
+
+    .demo-card {
+      min-width: 0;
+      padding: 1.25rem;
+      border: 1px solid #d8dbe1;
+      border-radius: 0.5rem;
+    }
+
+    .demo-card h3 {
+      margin-block-start: 0;
+    }
+
+    .demo-note {
+      padding: 1rem;
+      border-inline-start: 0.3rem solid #005fcc;
+      background: #eef5ff;
+    }
+
+    .demo-table-wrap,
+    pre {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      min-width: 42rem;
+      border-collapse: collapse;
+    }
+
+    #options table {
+      min-width: 60rem;
+      table-layout: fixed;
+    }
+
+    #options th:nth-child(1) {
+      width: 12rem;
+    }
+
+    #options th:nth-child(2) {
+      width: 18rem;
+    }
+
+    #options th:nth-child(3) {
+      width: 12rem;
+    }
+
+    #options td {
+      overflow-wrap: anywhere;
+    }
+
+    .demo-option-values {
+      margin: 0;
+    }
+
+    .demo-option-values dt {
+      font-weight: 700;
+    }
+
+    .demo-option-values dd {
+      margin: 0.2rem 0 0.75rem;
+    }
+
+    .demo-option-values dd:last-child {
+      margin-block-end: 0;
+    }
+
+    th,
+    td {
+      padding: 0.75rem;
+      border: 1px solid #c8ccd3;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eef0f3;
+    }
+
+    pre {
+      margin: 0 0 1rem;
+      padding: 1rem;
+      border-radius: 0.4rem;
+      color: #f8f8f2;
+      background: #20242c;
+      line-height: 1.5;
+    }
+
+    pre code {
+      padding: 0;
+      color: inherit;
+      background: transparent;
+      font-size: 0.875rem;
+    }
+
+    kbd {
+      padding: 0.08em 0.35em;
+      border: 1px solid #8d929b;
+      border-bottom-width: 2px;
+      border-radius: 0.25rem;
+      background: #fff;
+      font: inherit;
+      font-size: 0.9em;
+    }
+
+    .demo-footer {
+      --demo-footer-background: #0f172a;
+      --demo-footer-color: #f8fafc;
+      --demo-footer-muted-color: #cbd5e1;
+      --demo-footer-link-color: #ffffff;
+      --demo-footer-border-color: rgba(255, 255, 255, 0.16);
+      --demo-footer-focus-color: #facc15;
+      --demo-footer-radius: 1.25rem;
+      --demo-footer-space: clamp(1rem, 2vw, 1.5rem);
+
+      --_background: var(--demo-footer-background);
+      --_color: var(--demo-footer-color);
+      --_muted-color: var(--demo-footer-muted-color);
+      --_link-color: var(--demo-footer-link-color);
+      --_border-color: var(--demo-footer-border-color);
+      --_focus-color: var(--demo-footer-focus-color);
+      --_radius: var(--demo-footer-radius);
+      --_space: var(--demo-footer-space);
+
+      margin-block: clamp(3rem, 8vw, 6rem) 2rem;
+      padding: var(--_space);
+      color: var(--_color);
+      background: var(--_background);
+      border: 1px solid var(--_border-color);
+      border-radius: var(--_radius);
+    }
+
+    .demo-footer__inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .demo-footer__brand {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .demo-footer__eyebrow,
+    .demo-footer__credit,
+    .demo-footer__meta {
+      margin: 0;
+    }
+
+    .demo-footer__eyebrow,
+    .demo-footer__meta {
+      color: var(--_muted-color);
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    .demo-footer__credit {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .demo-footer__plugin {
+      font-weight: 700;
+    }
+
+    .demo-footer__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .demo-footer__link {
+      color: var(--_link-color);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.2em;
+    }
+
+    .demo-footer__link:hover {
+      text-decoration-thickness: 0.15em;
+    }
+
+    .demo-footer__link:focus-visible {
+      outline: 3px solid var(--_focus-color);
+      outline-offset: 0.25rem;
+      border-radius: 0.25rem;
+    }
+
+    .demo-footer__separator {
+      margin-inline: 0.35rem;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: #005fcc;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 0 0 0.25rem 0.25rem;
+      font-weight: 700;
+      text-decoration: none;
+      z-index: 100;
+    }
+
+    .skip-link:focus-visible {
+      top: 0;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid #ffbf47;
+      outline-offset: 3px;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 0.1em 0.3em;
+      border-radius: 0.25rem;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 35rem) {
+      .demo-header__links a {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .demo-section {
+        margin-inline: 0;
+        padding-inline: 1rem;
+      }
+
+      .demo-footer__inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .demo-footer__links {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html:focus-within {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="./index.html">A11y Quiz Form</a>
+      <nav class="site-header__nav" aria-label="Main navigation">
+        <ul class="site-header__links">
+          <li><a class="site-header__link" href="#overview">Overview</a></li>
+          <li><a class="site-header__link" href="#examples">Examples</a></li>
+          <li><a class="site-header__link" href="https://github.com/vmitsaras/A11y-Quiz-Form">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="demo-page">
+    <header class="demo-header" id="overview">
+      <h1 class="demo-header__title">A11y Quiz Form</h1>
+      <p class="demo-header__description">
+        Progressive quiz behavior for semantic HTML forms, with retry feedback,
+        single- and multiple-answer scoring, and practice, exam, and review modes.
+      </p>
+      <div class="demo-header__links">
+        <a href="#demo">Try the live demo</a>
+        <a href="https://github.com/vmitsaras/A11y-Quiz-Form">View the source on GitHub</a>
+      </div>
+      <nav class="demo-nav" aria-label="Documentation sections">
+        <a href="#install">Install</a>
+        <a href="#usage">Usage</a>
+        <a href="#examples">Examples</a>
+        <a href="#options">Options</a>
+        <a href="#localization">Localization</a>
+        <a href="#accessibility">Accessibility</a>
+        <a href="#styling">Styling</a>
+        <a href="#limitations">Limitations</a>
+      </nav>
+    </header>
+
+    <main id="main">
+
+      <section class="demo-section demo-facts" aria-labelledby="facts-title">
+        <h2 class="demo-section__title" id="facts-title">Quick facts</h2>
+        <dl>
+          <div>
+            <dt>Package</dt>
+            <dd><code>a11y-quiz-form</code></dd>
+          </div>
+          <div>
+            <dt>Format</dt>
+            <dd>TypeScript source, ESM output</dd>
+          </div>
+          <div>
+            <dt>Runtime dependencies</dt>
+            <dd>None</dd>
+          </div>
+          <div>
+            <dt>Best for</dt>
+            <dd>One quiz question per native form</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- ── Demo 1: Basic single-answer (practice mode) ──────────────── -->
+      <section class="demo-section" id="demo" aria-labelledby="demo1-title">
+        <h2 class="demo-section__title" id="demo1-title">Live demo: Single answer</h2>
+        <p class="demo-section__intro">
+          Choose an answer and check it. A wrong first attempt reveals targeted feedback;
+          a correct or final answer reveals all explanations.
+        </p>
+        <p class="demo-badge">Practice · 2 attempts · Radio buttons</p>
+
+        <form
+          class="a11y-quiz"
+          data-a11y-quiz
+          data-max-attempts="2"
+          data-mode="practice"
+          data-show-answer-mode="after-first-wrong"
+          data-explanation-mode="selected-after-wrong"
+          data-show-progress="true"
+          novalidate
+        >
+          <fieldset class="a11y-quiz__fieldset">
+            <legend class="a11y-quiz__question">
+              Which HTML element should be used for a clickable form action?
+            </legend>
+
+            <p class="a11y-quiz__instruction">Choose one answer.</p>
+
+            <details class="a11y-quiz__hint">
+              <summary>Need a hint?</summary>
+              <div class="a11y-quiz__hint-content">
+                <p>Think about elements that work with keyboard and submit forms by default.</p>
+              </div>
+            </details>
+
+            <div class="a11y-quiz__answers">
+
+              <div class="a11y-quiz__answer" data-correct="true">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="q1" value="button">
+                  <span class="a11y-quiz__answer-text"><code>&lt;button&gt;</code></span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>
+                  Correct. A button is keyboard-accessible and exposes button semantics by default.
+                  It works inside forms without extra scripting.
+                </p>
+              </div>
+
+              <div class="a11y-quiz__answer" data-correct="false">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="q1" value="div">
+                  <span class="a11y-quiz__answer-text"><code>&lt;div&gt;</code></span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>
+                  Not quite. A div has no native button behavior and needs extra work —
+                  <code>role="button"</code>, <code>tabindex</code>, keyboard handlers, and state management —
+                  to become accessible.
+                </p>
+              </div>
+
+              <div class="a11y-quiz__answer" data-correct="false">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="q1" value="span">
+                  <span class="a11y-quiz__answer-text"><code>&lt;span&gt;</code></span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>
+                  Not quite. A span is an inline element with no interactive semantics.
+                  Using it as a button requires the same extra effort as a div.
+                </p>
+              </div>
+
+              <div class="a11y-quiz__answer" data-correct="false">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="q1" value="a">
+                  <span class="a11y-quiz__answer-text"><code>&lt;a&gt;</code></span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>
+                  Close, but links navigate — they do not trigger form actions by default.
+                  Use a button for actions and a link for navigation.
+                </p>
+              </div>
+
+            </div><!-- /.a11y-quiz__answers -->
+
+            <p class="a11y-quiz__attempt-count" aria-live="polite" hidden></p>
+            <p class="a11y-quiz__status" aria-live="polite"></p>
+
+            <div class="a11y-quiz__actions">
+              <button type="submit">Check answer</button>
+              <button type="button" data-quiz-show-answer hidden>
+                Show correct answer
+              </button>
+              <button type="button" data-quiz-reset hidden>
+                Try this question again
+              </button>
+            </div>
+
+            <div class="a11y-quiz__result-summary" hidden aria-live="polite">
+              <p class="a11y-quiz__result-summary-heading" aria-hidden="true">Result</p>
+              <p class="a11y-quiz__result-summary-text"></p>
+            </div>
+
+            <ul class="a11y-quiz__meta">
+              <li>Topic: Forms</li>
+              <li>WCAG: 4.1.2 Name, Role, Value</li>
+              <li>Difficulty: Beginner</li>
+            </ul>
+
+          </fieldset>
+
+          <noscript>
+            <details class="a11y-quiz__noscript">
+              <summary>Show answer and explanation (no JavaScript)</summary>
+              <p>The correct answer is <strong><code>&lt;button&gt;</code></strong>.</p>
+              <p>A button is keyboard-accessible and exposes button semantics by default.</p>
+            </details>
+          </noscript>
+        </form>
+      </section>
+
+      <!-- ── Demo 2: Multiple-answer (checkboxes) ──────────────────────── -->
+      <section class="demo-section" aria-labelledby="demo2-title">
+        <h2 class="demo-section__title" id="demo2-title">Multiple answers — Checkbox quiz</h2>
+        <p class="demo-badge demo-badge--multi">Practice · 2 attempts · Checkboxes</p>
+
+        <form
+          class="a11y-quiz"
+          data-a11y-quiz
+          data-max-attempts="2"
+          data-mode="practice"
+          data-scoring-mode="exact"
+          novalidate
+        >
+          <fieldset class="a11y-quiz__fieldset">
+            <legend class="a11y-quiz__question">
+              Which of the following are valid ways to associate a label with an input?
+            </legend>
+
+            <p class="a11y-quiz__instruction">Choose all answers that apply.</p>
+
+            <details class="a11y-quiz__hint">
+              <summary>Need a hint?</summary>
+              <div class="a11y-quiz__hint-content">
+                <p>There are at least two native HTML mechanisms for linking a label to an input.</p>
+              </div>
+            </details>
+
+            <div class="a11y-quiz__answers">
+
+              <div class="a11y-quiz__answer" data-correct="true">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="checkbox" name="q2" value="for-id">
+                  <span class="a11y-quiz__answer-text">Using <code>for</code> on the label and <code>id</code> on the input</span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>
+                  Correct. The <code>for</code>/<code>id</code> pair explicitly associates a label
+                  with an input. Clicking the label focuses the input.
+                </p>
+              </div>
+
+              <div class="a11y-quiz__answer" data-correct="true">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="checkbox" name="q2" value="wrap">
+                  <span class="a11y-quiz__answer-text">Wrapping the input inside the label element</span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>
+                  Correct. Placing the input inside the label element implicitly associates them.
+                  No <code>for</code>/<code>id</code> is needed in this case.
+                </p>
+              </div>
+
+              <div class="a11y-quiz__answer" data-correct="false">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="checkbox" name="q2" value="aria-label-only">
+                  <span class="a11y-quiz__answer-text">Using only <code>aria-label</code> on the input</span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>
+                  Not quite. While <code>aria-label</code> provides an accessible name, it does not
+                  create a visible label. Prefer a visible <code>&lt;label&gt;</code> element for most use cases.
+                </p>
+              </div>
+
+              <div class="a11y-quiz__answer" data-correct="false">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="checkbox" name="q2" value="placeholder">
+                  <span class="a11y-quiz__answer-text">Using the <code>placeholder</code> attribute as a label</span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>
+                  Incorrect. A placeholder disappears when the user starts typing and is not
+                  a reliable label. It also fails contrast requirements when styled dimly.
+                </p>
+              </div>
+
+            </div><!-- /.a11y-quiz__answers -->
+
+            <p class="a11y-quiz__attempt-count" aria-live="polite" hidden></p>
+            <p class="a11y-quiz__status" aria-live="polite"></p>
+
+            <div class="a11y-quiz__actions">
+              <button type="submit">Check answer</button>
+              <button type="button" data-quiz-show-answer hidden>
+                Show correct answer
+              </button>
+              <button type="button" data-quiz-reset hidden>
+                Try this question again
+              </button>
+            </div>
+
+            <div class="a11y-quiz__result-summary" hidden aria-live="polite">
+              <p class="a11y-quiz__result-summary-heading" aria-hidden="true">Result</p>
+              <p class="a11y-quiz__result-summary-text"></p>
+            </div>
+
+            <ul class="a11y-quiz__meta">
+              <li>Topic: Forms</li>
+              <li>WCAG: 1.3.1 Info and Relationships</li>
+              <li>Difficulty: Intermediate</li>
+            </ul>
+
+          </fieldset>
+
+          <noscript>
+            <details class="a11y-quiz__noscript">
+              <summary>Show answer and explanation (no JavaScript)</summary>
+              <p>The correct answers are: <strong>Using <code>for</code>/<code>id</code></strong> and
+              <strong>wrapping the input inside the label</strong>.</p>
+            </details>
+          </noscript>
+        </form>
+      </section>
+
+      <!-- ── Demo 3: Exam mode (one attempt, no hint) ───────────────────── -->
+      <section class="demo-section" aria-labelledby="demo3-title">
+        <h2 class="demo-section__title" id="demo3-title">Exam mode — One attempt, no hint</h2>
+        <p class="demo-badge demo-badge--exam">Exam · 1 attempt · No hint</p>
+
+        <form
+          class="a11y-quiz"
+          data-a11y-quiz
+          data-mode="exam"
+          data-allow-reset="false"
+          novalidate
+        >
+          <fieldset class="a11y-quiz__fieldset">
+            <legend class="a11y-quiz__question">
+              According to WCAG 2.2, what is the minimum contrast ratio for normal text?
+            </legend>
+
+            <p class="a11y-quiz__instruction">Choose one answer.</p>
+
+            <!-- Hint hidden in exam mode by JS -->
+            <details class="a11y-quiz__hint">
+              <summary>Need a hint?</summary>
+              <div class="a11y-quiz__hint-content">
+                <p>Look up WCAG Success Criterion 1.4.3.</p>
+              </div>
+            </details>
+
+            <div class="a11y-quiz__answers">
+
+              <div class="a11y-quiz__answer" data-correct="false">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="q3" value="3to1">
+                  <span class="a11y-quiz__answer-text">3:1</span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>
+                  3:1 is the minimum ratio for large text (SC 1.4.3 AA) and for UI components (SC 1.4.11).
+                  Normal-sized text requires a higher ratio.
+                </p>
+              </div>
+
+              <div class="a11y-quiz__answer" data-correct="true">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="q3" value="4-5to1">
+                  <span class="a11y-quiz__answer-text">4.5:1</span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>
+                  Correct. WCAG 2.2 SC 1.4.3 (Level AA) requires a contrast ratio of at least 4.5:1
+                  for normal text.
+                </p>
+              </div>
+
+              <div class="a11y-quiz__answer" data-correct="false">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="q3" value="7to1">
+                  <span class="a11y-quiz__answer-text">7:1</span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>
+                  7:1 is the enhanced contrast ratio required by WCAG SC 1.4.6 (Level AAA).
+                  The standard AA requirement is lower.
+                </p>
+              </div>
+
+              <div class="a11y-quiz__answer" data-correct="false">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="q3" value="5to1">
+                  <span class="a11y-quiz__answer-text">5:1</span>
+                </label>
+                <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                <p class="a11y-quiz__explanation" hidden>
+                  5:1 is not a standard WCAG threshold. The defined levels are 3:1, 4.5:1, and 7:1.
+                </p>
+              </div>
+
+            </div><!-- /.a11y-quiz__answers -->
+
+            <p class="a11y-quiz__attempt-count" aria-live="polite" hidden></p>
+            <p class="a11y-quiz__status" aria-live="polite"></p>
+
+            <div class="a11y-quiz__actions">
+              <button type="submit">Submit answer</button>
+              <button type="button" data-quiz-show-answer hidden>
+                Show correct answer
+              </button>
+              <button type="button" data-quiz-reset hidden>
+                Try this question again
+              </button>
+            </div>
+
+            <div class="a11y-quiz__result-summary" hidden aria-live="polite">
+              <p class="a11y-quiz__result-summary-heading" aria-hidden="true">Result</p>
+              <p class="a11y-quiz__result-summary-text"></p>
+            </div>
+
+            <ul class="a11y-quiz__meta">
+              <li>Topic: Visual Design</li>
+              <li>WCAG: 1.4.3 Contrast (Minimum)</li>
+              <li>Difficulty: Beginner</li>
+            </ul>
+
+          </fieldset>
+
+          <noscript>
+            <details class="a11y-quiz__noscript">
+              <summary>Show answer and explanation (no JavaScript)</summary>
+              <p>The correct answer is <strong>4.5:1</strong>.</p>
+              <p>WCAG SC 1.4.3 (Level AA) requires a minimum contrast ratio of 4.5:1 for normal text.</p>
+            </details>
+          </noscript>
+        </form>
+      </section>
+
+      <!-- ── Demo 4: Review mode ────────────────────────────────────────── -->
+      <section class="demo-section" aria-labelledby="demo4-title">
+        <h2 class="demo-section__title" id="demo4-title">Review mode — Already answered</h2>
+        <p class="demo-badge demo-badge--review">Review · Read-only · All explanations visible</p>
+
+        <form
+          class="a11y-quiz"
+          data-a11y-quiz
+          data-mode="review"
+          novalidate
+        >
+          <fieldset class="a11y-quiz__fieldset">
+            <legend class="a11y-quiz__question">
+              What does ARIA stand for?
+            </legend>
+
+            <p class="a11y-quiz__instruction">You previously answered this question.</p>
+
+            <div class="a11y-quiz__answers">
+
+              <div class="a11y-quiz__answer" data-correct="false">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="q4" value="a1" checked>
+                  <span class="a11y-quiz__answer-text">Accessible Rich Information Applications</span>
+                </label>
+                <p class="a11y-quiz__explanation" hidden>
+                  Close, but the "I" stands for "Internet", not "Information".
+                </p>
+              </div>
+
+              <div class="a11y-quiz__answer" data-correct="true">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="q4" value="a2">
+                  <span class="a11y-quiz__answer-text">Accessible Rich Internet Applications</span>
+                </label>
+                <p class="a11y-quiz__explanation" hidden>
+                  Correct. ARIA stands for Accessible Rich Internet Applications.
+                  It is a W3C specification for adding semantics and accessibility to web content.
+                </p>
+              </div>
+
+              <div class="a11y-quiz__answer" data-correct="false">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="q4" value="a3">
+                  <span class="a11y-quiz__answer-text">Automated Rendering Interface Architecture</span>
+                </label>
+                <p class="a11y-quiz__explanation" hidden>
+                  This is not a real technology. ARIA is specifically about accessibility.
+                </p>
+              </div>
+
+              <div class="a11y-quiz__answer" data-correct="false">
+                <label class="a11y-quiz__answer-label">
+                  <input class="a11y-quiz__input" type="radio" name="q4" value="a4">
+                  <span class="a11y-quiz__answer-text">Advanced Responsive Interface Attributes</span>
+                </label>
+                <p class="a11y-quiz__explanation" hidden>
+                  This is not a real technology. ARIA is specifically about accessibility semantics.
+                </p>
+              </div>
+
+            </div><!-- /.a11y-quiz__answers -->
+
+            <p class="a11y-quiz__status" aria-live="polite"></p>
+
+            <ul class="a11y-quiz__meta">
+              <li>Topic: ARIA</li>
+              <li>WCAG: 4.1.2 Name, Role, Value</li>
+              <li>Difficulty: Beginner</li>
+            </ul>
+
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="demo-section" id="examples" aria-labelledby="examples-title">
+        <h2 class="demo-section__title" id="examples-title">Focused standalone examples</h2>
+        <p class="demo-section__intro">
+          Use these smaller pages when you need one behavior, configuration boundary, or lifecycle
+          question without the full documentation page around it.
+        </p>
+        <div class="demo-grid">
+          <article class="demo-card">
+            <h3>Basic single answer</h3>
+            <p>A copy-pasteable radio-button quiz with two attempts and progressive feedback.</p>
+            <p><a href="./basic/">Open the basic example</a></p>
+          </article>
+          <article class="demo-card">
+            <h3>Multiple-answer scoring lab</h3>
+            <p>Matched checkbox quizzes make exact versus partial scoring easy to compare.</p>
+            <p><a href="./multiple-answer-scoring/">Open the scoring lab</a></p>
+          </article>
+          <article class="demo-card">
+            <h3>Spanish localization example</h3>
+            <p>Test Spanish validation, retry, progress, result, reveal, and answer-state messages.</p>
+            <p><a href="./spanish-localization/">Open the localization example</a></p>
+          </article>
+          <article class="demo-card">
+            <h3>State playground</h3>
+            <p>Apply mode and option presets from controls kept outside the runtime plugin form.</p>
+            <p><a href="./state-playground/">Open the state playground</a></p>
+          </article>
+          <article class="demo-card">
+            <h3>Teardown and reinitialize lab</h3>
+            <p>Inspect cleanup artifacts, exact author-markup equality, restoration, and reinitialization.</p>
+            <p><a href="./teardown-reinitialize/">Open the lifecycle lab</a></p>
+          </article>
+          <article class="demo-card">
+            <h3>Dynamic content refresh lab</h3>
+            <p>Replace answer markup while inspecting selection migration, focus recovery, and refresh event details.</p>
+            <p><a href="./dynamic-content-refresh/">Open the refresh lab</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="demo-section" id="install" aria-labelledby="install-title">
+        <h2 class="demo-section__title" id="install-title">Installation</h2>
+        <p class="demo-section__intro">
+          The repository is configured for npm packaging. Confirm registry availability before
+          using the package name in a production install.
+        </p>
+        <div class="demo-grid">
+          <div class="demo-card">
+            <h3>npm</h3>
+            <pre><code>npm install a11y-quiz-form</code></pre>
+          </div>
+          <div class="demo-card">
+            <h3>pnpm</h3>
+            <pre><code>pnpm add a11y-quiz-form</code></pre>
+          </div>
+          <div class="demo-card">
+            <h3>Yarn</h3>
+            <pre><code>yarn add a11y-quiz-form</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="usage" aria-labelledby="usage-title">
+        <h2 class="demo-section__title" id="usage-title">Basic usage</h2>
+        <p class="demo-section__intro">
+          Supply the semantic form markup. The plugin adds feedback behavior and live-region
+          relationships; it does not generate the question or answers.
+        </p>
+
+        <h3>HTML</h3>
+        <pre><code>&lt;form class="a11y-quiz" data-a11y-quiz novalidate&gt;
+  &lt;fieldset class="a11y-quiz__fieldset"&gt;
+    &lt;legend class="a11y-quiz__question"&gt;Which element is a button?&lt;/legend&gt;
+    &lt;p class="a11y-quiz__instruction"&gt;Choose one answer.&lt;/p&gt;
+
+    &lt;div class="a11y-quiz__answers"&gt;
+      &lt;div class="a11y-quiz__answer" data-correct="true"&gt;
+        &lt;label class="a11y-quiz__answer-label"&gt;
+          &lt;input class="a11y-quiz__input" type="radio" name="answer" value="button"&gt;
+          &lt;span class="a11y-quiz__answer-text"&gt;&amp;lt;button&amp;gt;&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;p class="a11y-quiz__explanation" hidden&gt;A button has native semantics.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p class="a11y-quiz__status"&gt;&lt;/p&gt;
+    &lt;div class="a11y-quiz__actions"&gt;
+      &lt;button type="submit"&gt;Check answer&lt;/button&gt;
+      &lt;button type="button" data-quiz-show-answer hidden&gt;Show answer&lt;/button&gt;
+      &lt;button type="button" data-quiz-reset hidden&gt;Try again&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+
+        <h3>JavaScript</h3>
+        <pre><code>import { createQuizForm } from "a11y-quiz-form";
+import "a11y-quiz-form/styles.css";
+
+const form = document.querySelector("[data-a11y-quiz]");
+
+if (form instanceof HTMLFormElement) {
+  createQuizForm(form, { maxAttempts: 2 });
+}</code></pre>
+
+        <p>
+          See the <a href="./basic/">focused basic example</a> for a complete standalone file.
+        </p>
+      </section>
+
+      <section class="demo-section" id="options" aria-labelledby="options-title">
+        <h2 class="demo-section__title" id="options-title">Options</h2>
+        <p class="demo-section__intro">
+          Pass options to <code>createQuizForm()</code> or use the matching
+          <code>data-*</code> attributes. Programmatic options take precedence and invalid values
+          fall back to the defaults.
+        </p>
+        <div class="demo-table-wrap" tabindex="0" role="region" aria-label="Quiz form options table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Option</th>
+                <th scope="col">Type</th>
+                <th scope="col">Default</th>
+                <th scope="col">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>mode</code></td>
+                <td><code>"practice" | "exam" | "review"</code></td>
+                <td><code>"practice"</code></td>
+                <td>
+                  <dl class="demo-option-values">
+                    <dt><code>"practice"</code></dt>
+                    <dd>Uses your configured attempt limit, hints, answer reveal, reset, and explanation settings for a guided learning flow.</dd>
+                    <dt><code>"exam"</code></dt>
+                    <dd>Allows one check, hides hints and answer reveal, and shows all explanations after that final attempt. Reset availability still follows <code>allowReset</code>; set it to <code>false</code> for a single-submission exam.</dd>
+                    <dt><code>"review"</code></dt>
+                    <dd>Starts with the answer and all explanations revealed. Inputs are disabled, actions are hidden, and check, reveal, and reset calls do nothing.</dd>
+                  </dl>
+                </td>
+              </tr>
+              <tr>
+                <td><code>maxAttempts</code></td>
+                <td><code>number</code></td>
+                <td><code>2</code></td>
+                <td>Sets allowed checks from 1 through 100; exam mode always uses one.</td>
+              </tr>
+              <tr>
+                <td><code>explanationMode</code></td>
+                <td><code>QuizFormExplanationMode</code></td>
+                <td><code>selected-after-wrong</code></td>
+                <td>Controls feedback visibility after a retryable incorrect answer.</td>
+              </tr>
+              <tr>
+                <td><code>showAnswerMode</code></td>
+                <td><code>QuizFormShowAnswerMode</code></td>
+                <td><code>after-first-wrong</code></td>
+                <td>Controls when the optional reveal button becomes available.</td>
+              </tr>
+              <tr>
+                <td><code>scoringMode</code></td>
+                <td><code>"exact" | "partial" | "all-or-nothing"</code></td>
+                <td><code>exact</code></td>
+                <td>
+                  <dl class="demo-option-values">
+                    <dt><code>"exact"</code></dt>
+                    <dd>Requires every correct option and no incorrect options.</dd>
+                    <dt><code>"partial"</code></dt>
+                    <dd>Accepts any non-empty subset containing only correct options. This is subset acceptance, not a numeric partial-credit score.</dd>
+                    <dt><code>"all-or-nothing"</code></dt>
+                    <dd>Compatibility alias of <code>"exact"</code>; it uses the same complete-set rule.</dd>
+                  </dl>
+                </td>
+              </tr>
+              <tr>
+                <td><code>allowReset</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>Enables <code>reset()</code> and shows the reset action after completion.</td>
+              </tr>
+              <tr>
+                <td><code>disableAfterComplete</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>Disables answer inputs after completion or reveal.</td>
+              </tr>
+              <tr>
+                <td><code>focusResult</code></td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>Moves focus to the result summary after completion; default behavior preserves focus.</td>
+              </tr>
+              <tr>
+                <td><code>announceChanges</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>Writes feedback to the polite status region.</td>
+              </tr>
+              <tr>
+                <td><code>shuffleAnswers</code></td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>Randomizes answer-card DOM order once during initialization.</td>
+              </tr>
+              <tr>
+                <td><code>showProgress</code></td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>Adds an attempt progress indicator.</td>
+              </tr>
+              <tr>
+                <td><code>disableCheckUntilAnswered</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>Disables the submit button until at least one answer is selected.</td>
+              </tr>
+              <tr>
+                <td><code>messages</code></td>
+                <td><code>QuizFormMessages</code></td>
+                <td>English catalog</td>
+                <td>Partially overrides validation, status, progress, summary, and answer-state text.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="demo-section" id="localization" aria-labelledby="localization-title">
+        <h2 class="demo-section__title" id="localization-title">Localization</h2>
+        <p class="demo-section__intro">
+          Pass a partial typed message catalog. Strings work for fixed copy; callbacks receive
+          <code>attempt</code>, <code>maxAttempts</code>, and <code>remainingAttempts</code> for
+          grammar and pluralization. Missing, empty, invalid, or throwing overrides safely use
+          the existing English default.
+        </p>
+        <pre><code>import { createQuizForm, type QuizFormMessages } from "a11y-quiz-form";
+
+const messages = {
+  validationRequired: "Elige al menos una respuesta.",
+  correct: ({ attempt }) =&gt; `Correcto en el intento ${attempt}.`,
+  incorrectRetry: ({ remainingAttempts }) =&gt;
+    remainingAttempts === 1
+      ? "Queda un intento."
+      : `Quedan ${remainingAttempts} intentos.`,
+} satisfies QuizFormMessages;
+
+createQuizForm(form, { messages });</code></pre>
+        <p>
+          Keep live-region and validation messages concise, meaningful, and non-empty. Include
+          the result or action and any remaining-attempt context needed without relying on nearby
+          visual content. Callbacks intentionally receive attempt counts, not selected values.
+          Do not close over or place private response data, personal information, or secure answer
+          material in messages because the text can be visible and announced by assistive technology.
+        </p>
+        <p>
+          The exported <code>QuizFormMessages</code>, <code>QuizFormMessageContext</code>, and
+          <code>QuizFormMessageKey</code> types define the catalog. See the repository README for
+          the complete message-key table and English default purposes.
+        </p>
+      </section>
+
+      <section class="demo-section" id="api" aria-labelledby="api-title">
+        <h2 class="demo-section__title" id="api-title">API and events</h2>
+        <div class="demo-table-wrap" tabindex="0" role="region" aria-label="Quiz form API table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Method</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>createQuizForm(form, options?)</code></td>
+                <td>Enhances one form and reuses its existing instance.</td>
+              </tr>
+              <tr>
+                <td><code>initQuizForms(options?, root?)</code></td>
+                <td>Enhances every declarative form in a document or parent node.</td>
+              </tr>
+              <tr>
+                <td><code>quizFormEvents</code></td>
+                <td>Provides frozen constants for every public lifecycle event name.</td>
+              </tr>
+              <tr>
+                <td><code>onQuizFormEvent(target, name, listener, options?)</code></td>
+                <td>Adds a typed lifecycle listener and returns idempotent cleanup.</td>
+              </tr>
+              <tr>
+                <td><code>check()</code></td>
+                <td>Checks the current answer selection.</td>
+              </tr>
+              <tr>
+                <td><code>reveal()</code></td>
+                <td>Reveals the correct answers and explanations.</td>
+              </tr>
+              <tr>
+                <td><code>reset()</code></td>
+                <td>Returns the instance to its initial interaction and checked/disabled input state.</td>
+              </tr>
+              <tr>
+                <td><code>getState()</code></td>
+                <td>Returns state, attempts, selected values, and correctness.</td>
+              </tr>
+              <tr>
+                <td><code>destroy()</code></td>
+                <td>Removes listeners and generated feedback, restores author-owned state and answer order, then emits the destroy event.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Events</h3>
+        <p>
+          Events dispatch synchronously from the form, bubble, do not cross a shadow boundary,
+          and are non-cancelable. Their <code>detail</code> includes <code>instance</code> and the
+          compatibility alias <code>quiz</code>, plus the fields below.
+        </p>
+        <div class="demo-table-wrap" tabindex="0" role="region" aria-label="Quiz form lifecycle events table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Event</th>
+                <th scope="col">Trigger</th>
+                <th scope="col">Additional detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>a11yquiz:init</code></td><td>Enhancement begins after initial state capture.</td><td>—</td></tr>
+              <tr><td><code>a11yquiz:ready</code></td><td>Enhancement and initial synchronization finish.</td><td>—</td></tr>
+              <tr><td><code>a11yquiz:change</code></td><td>A managed input changes.</td><td><code>selected</code></td></tr>
+              <tr><td><code>a11yquiz:check</code></td><td>An active check is accepted.</td><td><code>selected</code>, <code>valid</code>, <code>attempt</code></td></tr>
+              <tr><td><code>a11yquiz:correct</code></td><td>Correct-result UI finishes.</td><td><code>attempt</code></td></tr>
+              <tr><td><code>a11yquiz:incorrect</code></td><td>Incorrect-result UI finishes.</td><td><code>attempt</code>, <code>canRetry</code></td></tr>
+              <tr><td><code>a11yquiz:retry</code></td><td>A retry is available.</td><td><code>attempt</code></td></tr>
+              <tr><td><code>a11yquiz:reveal</code></td><td>Answer-reveal UI finishes.</td><td>—</td></tr>
+              <tr><td><code>a11yquiz:reset</code></td><td>An accepted reset finishes.</td><td>—</td></tr>
+              <tr><td><code>a11yquiz:complete</code></td><td>A run first reaches a terminal result.</td><td><code>correct</code>, <code>revealed</code>, <code>attempt</code></td></tr>
+              <tr><td><code>a11yquiz:destroy</code></td><td>Cleanup and author-DOM restoration finish.</td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Guaranteed sequences include <code>init → ready</code>,
+          <code>check → correct → complete</code>,
+          <code>check → incorrect → retry</code>, and
+          <code>check → incorrect → complete</code>. When reveal first completes a run it emits
+          <code>reveal → complete</code>; a later permitted reveal emits only <code>reveal</code>.
+        </p>
+      </section>
+
+      <section class="demo-section" id="accessibility" aria-labelledby="accessibility-title">
+        <h2 class="demo-section__title" id="accessibility-title">Accessibility behavior</h2>
+        <div class="demo-grid">
+          <div class="demo-card">
+            <h3>Structure and feedback</h3>
+            <ul>
+              <li>Starts with a native form, fieldset, legend, labels, radio buttons, checkboxes, and buttons.</li>
+              <li>Associates instructions, hints, answer notes, statuses, and visible explanations with each input while preserving author-provided description references.</li>
+              <li>Uses an assertive validation message for a missing answer and polite status regions for quiz feedback.</li>
+              <li>Adds visible text such as “Correct answer” and “Your answer: incorrect,” so color is not the only signal.</li>
+            </ul>
+          </div>
+          <div class="demo-card">
+            <h3>Focus and display</h3>
+            <ul>
+              <li>Preserves focus by default; optional result focusing is explicit.</li>
+              <li>Uses native disabled states after completion and restores initial checked and disabled input state on reset.</li>
+              <li>Restores author-owned ARIA, text, focusability, hidden state, button state, and answer order when the instance is destroyed.</li>
+              <li>Includes visible focus styles, forced-colors rules, reduced-motion handling, and a no-JavaScript answer fallback in the examples.</li>
+              <li>Does not add application-widget roles to native form controls.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Keyboard interaction</h3>
+        <div class="demo-table-wrap" tabindex="0" role="region" aria-label="Keyboard interaction table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Key</th>
+                <th scope="col">Behavior</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd></td>
+                <td>Moves through the native form controls, hint summary, and action buttons.</td>
+              </tr>
+              <tr>
+                <td>Arrow keys</td>
+                <td>Uses the browser’s native radio-group selection behavior.</td>
+              </tr>
+              <tr>
+                <td><kbd>Space</kbd></td>
+                <td>Selects a focused radio button or checkbox, or activates a focused button.</td>
+              </tr>
+              <tr>
+                <td><kbd>Enter</kbd></td>
+                <td>Activates a focused button and submits the quiz through its native form behavior.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="demo-section" id="styling" aria-labelledby="styling-title">
+        <h2 class="demo-section__title" id="styling-title">Styling hooks</h2>
+        <div class="demo-grid">
+          <div class="demo-card">
+            <h3>Stable classes</h3>
+            <p>
+              The stylesheet uses the <code>.a11y-quiz</code> block with BEM elements including
+              <code>__fieldset</code>, <code>__answer</code>, <code>__input</code>,
+              <code>__actions</code>, <code>__status</code>, and <code>__explanation</code>.
+              Runtime states use <code>.is-selected</code>, <code>.is-correct</code>, and
+              <code>.is-incorrect</code>.
+            </p>
+          </div>
+          <div class="demo-card">
+            <h3>Public custom properties</h3>
+            <p>
+              Theme the component with prefixed properties such as
+              <code>--a11y-quiz-color-action-bg</code>,
+              <code>--a11y-quiz-color-focus-ring</code>,
+              <code>--a11y-quiz-color-correct-bg</code>,
+              <code>--a11y-quiz-radius</code>, and
+              <code>--a11y-quiz-max-width</code>. Properties beginning with <code>--_</code>
+              are private implementation details.
+            </p>
+          </div>
+        </div>
+        <pre><code>.a11y-quiz {
+  --a11y-quiz-color-action-bg: #5b21b6;
+  --a11y-quiz-color-action-hover: #4c1d95;
+  --a11y-quiz-color-focus-ring: #fbbf24;
+  --a11y-quiz-radius: 0.75rem;
+}</code></pre>
+      </section>
+
+      <section class="demo-section" id="limitations" aria-labelledby="limitations-title">
+        <h2 class="demo-section__title" id="limitations-title">Limitations and support</h2>
+        <ul>
+          <li>The plugin manages one question per form; it does not aggregate scores across a quiz or persist results.</li>
+          <li>Question and answer markup must follow the documented class and data-attribute contract.</li>
+          <li>Correct answers are stored in client-side <code>data-correct</code> attributes. Exam mode changes interaction, but it is not a secure assessment system.</li>
+          <li>The plugin does not sanitize author-provided question, hint, or explanation HTML.</li>
+          <li>Screen reader output still depends on correct, concise content and should be tested with the combinations your product supports.</li>
+          <li>No formal browser compatibility matrix or WCAG conformance claim is included. The build targets modern ESM-capable browsers.</li>
+        </ul>
+        <p class="demo-note">
+          Treat this package as an interaction layer. Content design, answer quality, localization,
+          end-to-end assistive-technology testing, and server-side assessment security remain the
+          integrating application’s responsibility.
+        </p>
+      </section>
+
+    </main><!-- /#main -->
+
+    <footer class="demo-footer" data-demo-footer>
+      <div class="demo-footer__inner">
+        <div class="demo-footer__brand">
+          <p class="demo-footer__eyebrow">Accessibility plugin demo</p>
+          <p class="demo-footer__credit">
+            <span class="demo-footer__plugin">A11y Quiz Form</span>
+            <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+            Built by
+            <a class="demo-footer__link" href="https://github.com/vmitsaras/">Vasileios Mitsaras</a>
+            <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+            <a class="demo-footer__link" href="https://linkedin.com/in/vasilis-mitsaras">LinkedIn profile</a>
+          </p>
+          <p class="demo-footer__meta">
+            <span>a11y-quiz-form</span>
+            <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+            <span>MIT License</span>
+          </p>
+        </div>
+        <nav class="demo-footer__nav" aria-label="Project links">
+          <ul class="demo-footer__links">
+            <li class="demo-footer__item">
+              <a class="demo-footer__link" href="https://github.com/vmitsaras/A11y-Quiz-Form">GitHub repository</a>
+            </li>
+            <li class="demo-footer__item">
+              <a class="demo-footer__link" href="https://www.npmjs.com/package/a11y-quiz-form">npm package</a>
+            </li>
+            <li class="demo-footer__item">
+              <a class="demo-footer__link" href="https://vmitsaras.github.io/A11y-Quiz-Form/">Documentation</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </div><!-- /.demo-page -->
+
+  <script type="module">
+    import { initQuizForms } from "./dist/index.js";
+
+    initQuizForms();
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+@import url("../demo-shell.css");
+
+:root {
+  --demo-accent: #8d4d20;
+  --demo-accent-strong: #673316;
+  --demo-accent-soft: #fff0df;
+  --demo-canvas: #faf4eb;
+}
+
+.demo-lifecycle-stage {
+  border-block-start: 0.35rem solid var(--demo-accent);
+}

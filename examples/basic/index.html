@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>Single-Answer Quiz Example | A11y Quiz Form</title>
+    <meta
+      name="description"
+      content="Test a progressively enhanced single-answer quiz with native radio buttons, two attempts, targeted feedback, answer reveal, and a no-JavaScript fallback."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://vmitsaras.github.io/A11y-Quiz-Form/basic/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="A11y Quiz Form">
+    <meta property="og:title" content="Single-Answer Quiz Example | A11y Quiz Form">
+    <meta
+      property="og:description"
+      content="Test a progressively enhanced single-answer quiz with native radio buttons, two attempts, targeted feedback, answer reveal, and a no-JavaScript fallback."
+    >
+    <meta property="og:url" content="https://vmitsaras.github.io/A11y-Quiz-Form/basic/">
+    <meta property="og:image" content="https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <meta
+      property="og:image:alt"
+      content="A11y Quiz Form social preview showing a progressively enhanced native HTML quiz."
+    >
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Single-Answer Quiz Example | A11y Quiz Form">
+    <meta
+      name="twitter:description"
+      content="Test a progressively enhanced single-answer quiz with native radio buttons, two attempts, targeted feedback, answer reveal, and a no-JavaScript fallback."
+    >
+    <meta name="twitter:image" content="https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png">
+    <meta
+      name="twitter:image:alt"
+      content="A11y Quiz Form social preview showing a progressively enhanced native HTML quiz."
+    >
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/basic/#webpage",
+          "url": "https://vmitsaras.github.io/A11y-Quiz-Form/basic/",
+          "name": "Single-Answer Quiz Example | A11y Quiz Form",
+          "description": "Test a progressively enhanced single-answer quiz with native radio buttons, two attempts, targeted feedback, answer reveal, and a no-JavaScript fallback.",
+          "inLanguage": "en",
+          "primaryImageOfPage": {
+            "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#primaryimage"
+          },
+          "isPartOf": {
+            "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#webpage"
+          },
+          "mainEntity": {
+            "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/basic/#software"
+          },
+          "author": {
+            "@id": "https://github.com/vmitsaras/#person"
+          }
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#primaryimage",
+          "url": "https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png",
+          "contentUrl": "https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png",
+          "width": 1280,
+          "height": 640,
+          "caption": "A11y Quiz Form — accessible quiz behavior for progressively enhanced native forms."
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/basic/#software",
+          "name": "A11y Quiz Form",
+          "description": "Accessible single- and multiple-answer quiz behavior for progressively enhanced native forms",
+          "version": "1.0.0",
+          "codeRepository": "https://github.com/vmitsaras/A11y-Quiz-Form",
+          "license": "https://github.com/vmitsaras/A11y-Quiz-Form/blob/main/LICENSE",
+          "programmingLanguage": [
+            "TypeScript",
+            "JavaScript"
+          ],
+          "runtimePlatform": "Browser",
+          "keywords": [
+            "accessibility",
+            "a11y",
+            "quiz",
+            "form",
+            "progressive enhancement",
+            "typescript"
+          ],
+          "featureList": [
+            "Single-answer quiz with native radio buttons",
+            "Two-attempt practice flow",
+            "Targeted answer feedback",
+            "No-JavaScript answer fallback"
+          ],
+          "author": {
+            "@id": "https://github.com/vmitsaras/#person"
+          },
+          "targetProduct": {
+            "@type": "SoftwareApplication",
+            "name": "A11y Quiz Form",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Any",
+            "runtimePlatform": "Browser"
+          },
+          "sameAs": [
+            "https://github.com/vmitsaras/A11y-Quiz-Form"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://github.com/vmitsaras/#person",
+          "name": "Vasileios Mitsaras",
+          "url": "https://github.com/vmitsaras/",
+          "sameAs": [
+            "https://github.com/vmitsaras/",
+            "https://linkedin.com/in/vasilis-mitsaras"
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="../../dist/styles.css">
+    <link rel="stylesheet" href="../../site-header.css">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" data-site-header>
+      <div class="site-header__inner">
+        <a class="site-header__logo" href="../../index.html">A11y Quiz Form</a>
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <ul class="site-header__links">
+            <li><a class="site-header__link" href="../../index.html#overview">Overview</a></li>
+            <li><a class="site-header__link" href="../../index.html#examples">Examples</a></li>
+            <li><a class="site-header__link" href="https://github.com/vmitsaras/A11y-Quiz-Form">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="demo-page" id="main">
+      <header class="demo-hero">
+        <p class="demo-hero__eyebrow">Basic example · Single answer</p>
+        <h1>Two-attempt single-answer practice quiz</h1>
+        <p class="demo-hero__summary">
+          Test validation, targeted retry feedback, answer reveal, and recovery with a focused
+          practice question built on native radio buttons.
+        </p>
+      </header>
+
+      <section class="demo-grid" aria-label="Scenario and test instructions">
+        <div class="demo-panel">
+          <h2>Scenario</h2>
+          <p>
+            An introductory accessibility course asks learners to identify the native element
+            that already provides form-action semantics and keyboard behavior.
+          </p>
+          <p>
+            <strong>User goal:</strong> understand the feedback after a missing or incorrect answer,
+            then complete the question.
+          </p>
+        </div>
+
+        <div class="demo-panel">
+          <h2>Try it</h2>
+          <ol class="demo-try-list">
+            <li>Activate <strong>Check answer</strong> without selecting an option to inspect validation feedback.</li>
+            <li>Select <code>&lt;div&gt;</code> and check the answer to reveal retry feedback.</li>
+            <li>Change the selection to <code>&lt;button&gt;</code> and check again, then reset the completed question.</li>
+            <li>After resetting, select <code>&lt;div&gt;</code>, check it, then choose <strong>Show correct answer</strong>.</li>
+            <li>After another reset, check <code>&lt;div&gt;</code> twice to inspect the final incorrect result.</li>
+            <li>Use <kbd>Tab</kbd> to reach controls and arrow keys to change the radio selection.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="demo-stage demo-basic-stage" aria-labelledby="quiz-title">
+        <h2 id="quiz-title">Practice question</h2>
+        <p class="demo-callout">
+          This example uses practice mode, two attempts, an attempt progress indicator, and
+          answer reveal after the first incorrect check.
+        </p>
+
+        <form
+          class="a11y-quiz"
+          data-a11y-quiz
+          data-max-attempts="2"
+          data-show-progress="true"
+          data-disable-check-until-answered="false"
+          novalidate
+        >
+        <fieldset class="a11y-quiz__fieldset">
+          <legend class="a11y-quiz__question">
+            Which HTML element should trigger a form action?
+          </legend>
+          <p class="a11y-quiz__instruction">Choose one answer.</p>
+
+          <details class="a11y-quiz__hint">
+            <summary>Need a hint?</summary>
+            <div class="a11y-quiz__hint-content">
+              <p>Prefer the native element whose built-in role matches the action.</p>
+            </div>
+          </details>
+
+          <div class="a11y-quiz__answers">
+            <div class="a11y-quiz__answer" data-correct="true">
+              <label class="a11y-quiz__answer-label">
+                <input class="a11y-quiz__input" type="radio" name="element" value="button">
+                <span class="a11y-quiz__answer-text"><code>&lt;button&gt;</code></span>
+              </label>
+              <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+              <p class="a11y-quiz__explanation" hidden>
+                Correct. A button exposes the expected semantics and keyboard behavior.
+              </p>
+            </div>
+
+            <div class="a11y-quiz__answer" data-correct="false">
+              <label class="a11y-quiz__answer-label">
+                <input class="a11y-quiz__input" type="radio" name="element" value="div">
+                <span class="a11y-quiz__answer-text"><code>&lt;div&gt;</code></span>
+              </label>
+              <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+              <p class="a11y-quiz__explanation" hidden>
+                A div has no native control semantics or keyboard activation behavior.
+              </p>
+            </div>
+          </div>
+
+          <p class="a11y-quiz__attempt-count" hidden></p>
+          <p class="a11y-quiz__status"></p>
+
+          <div class="a11y-quiz__actions">
+            <button type="submit">Check answer</button>
+            <button type="button" data-quiz-show-answer hidden>Show correct answer</button>
+            <button type="button" data-quiz-reset hidden>Try again</button>
+          </div>
+
+          <div class="a11y-quiz__result-summary" hidden>
+            <p class="a11y-quiz__result-summary-heading" aria-hidden="true">Result</p>
+            <p class="a11y-quiz__result-summary-text"></p>
+          </div>
+        </fieldset>
+
+        <noscript>
+          <details class="a11y-quiz__noscript">
+            <summary>Show the answer without JavaScript</summary>
+            <p>The correct answer is <code>&lt;button&gt;</code>.</p>
+          </details>
+        </noscript>
+        </form>
+
+      </section>
+
+      <section class="demo-grid" aria-label="Accessibility and developer notes">
+        <div class="demo-panel">
+          <h2>Accessibility notes</h2>
+          <ul class="demo-note-list">
+            <li>A native fieldset, legend, labels, radio buttons, and buttons provide the semantic baseline.</li>
+            <li>Arrow keys change the selected radio option; <kbd>Tab</kbd> moves to the next control.</li>
+            <li>Instructions, answer feedback, and explanations are associated with the relevant controls.</li>
+            <li>Polite status text announces results while focus stays in the current interaction.</li>
+            <li>Visible text reinforces correct and incorrect states without relying on color.</li>
+            <li>The page has no required motion and includes a no-JavaScript answer fallback.</li>
+          </ul>
+        </div>
+
+        <div class="demo-panel">
+          <h2>Developer notes</h2>
+          <p>
+            The root is <code>[data-a11y-quiz]</code>. Answer cards use
+            <code>.a11y-quiz__answer</code>, inputs use <code>.a11y-quiz__input</code>, and the
+            correct card carries <code>data-correct="true"</code>.
+          </p>
+          <p>For a package integration, use the semantic form markup with:</p>
+          <pre><code>import { createQuizForm } from "a11y-quiz-form";
+import "a11y-quiz-form/styles.css";
+
+const form = document.querySelector("[data-a11y-quiz]");
+
+if (form instanceof HTMLFormElement) {
+  createQuizForm(form);
+}</code></pre>
+          <p>The demo form itself begins with:</p>
+          <pre><code>&lt;form data-a11y-quiz
+  data-max-attempts="2"
+  data-show-progress="true"
+  data-disable-check-until-answered="false"&gt;
+  ...
+&lt;/form&gt;</code></pre>
+          <p>
+            This source demo imports <code>../../dist/index.js</code> and
+            <code>../../dist/styles.css</code>. It keeps <strong>Check answer</strong> available
+            before selection so validation feedback is testable. One instance manages one
+            question; score aggregation and persistence remain application concerns.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="demo-footer" data-demo-footer>
+      <div class="demo-footer__inner">
+        <div class="demo-footer__brand">
+          <p class="demo-footer__eyebrow">Accessibility plugin demo</p>
+          <p class="demo-footer__credit">
+            <span class="demo-footer__plugin">A11y Quiz Form</span>
+            <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+            Built by
+            <a class="demo-footer__link" href="https://github.com/vmitsaras/">Vasileios Mitsaras</a>
+            <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+            <a class="demo-footer__link" href="https://linkedin.com/in/vasilis-mitsaras">LinkedIn profile</a>
+          </p>
+          <p class="demo-footer__meta">
+            <span>a11y-quiz-form</span>
+            <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+            <span>MIT License</span>
+          </p>
+        </div>
+        <nav class="demo-footer__nav" aria-label="Project links">
+          <ul class="demo-footer__links">
+            <li class="demo-footer__item">
+              <a class="demo-footer__link" href="https://github.com/vmitsaras/A11y-Quiz-Form">GitHub repository</a>
+            </li>
+            <li class="demo-footer__item">
+              <a class="demo-footer__link" href="https://www.npmjs.com/package/a11y-quiz-form">npm package</a>
+            </li>
+            <li class="demo-footer__item">
+              <a class="demo-footer__link" href="https://vmitsaras.github.io/A11y-Quiz-Form/">Documentation</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { createQuizForm } from "../../dist/index.js";
+
+      const form = document.querySelector("[data-a11y-quiz]");
+      if (form instanceof HTMLFormElement) {
+        createQuizForm(form);
+      }
+    </script>
+  </body>
+</html>

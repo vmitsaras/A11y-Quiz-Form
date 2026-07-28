@@ -1,0 +1,114 @@
+/* Shared site navigation for the documentation landing page and standalone demos. */
+.site-header {
+  color: #172033;
+  background: #ffffff;
+  border-block-end: 1px solid #cbd3df;
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+  width: min(calc(100% - 2rem), 76rem);
+  min-block-size: 4.5rem;
+  margin-inline: auto;
+  padding-block: 0.75rem;
+}
+
+.site-header__logo {
+  color: #172033;
+  font-size: 1.1rem;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.site-header__logo:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.2em;
+}
+
+.site-header__nav {
+  margin-inline-start: auto;
+}
+
+.site-header__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.site-header__link {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  padding-inline: 0.8rem;
+  color: #24466f;
+  border-radius: 0.45rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-header__link:hover {
+  color: #0d3f72;
+  background: #edf4fb;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.18em;
+}
+
+.site-header__logo:focus-visible,
+.site-header__link:focus-visible {
+  outline: 3px solid #f5a623;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  inset-block-start: -10rem;
+  inset-inline-start: 1rem;
+  z-index: 100;
+  padding: 0.65rem 1rem;
+  color: #ffffff;
+  background: #0d3f72;
+  border-radius: 0 0 0.35rem 0.35rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  inset-block-start: 0;
+  outline: 3px solid #f5a623;
+  outline-offset: 3px;
+}
+
+@media (max-width: 42rem) {
+  .site-header__nav {
+    width: 100%;
+    margin-inline-start: 0;
+  }
+
+  .site-header__links {
+    justify-content: space-between;
+  }
+
+  .site-header__link {
+    padding-inline: 0.55rem;
+  }
+}
+
+@media (forced-colors: active) {
+  .site-header {
+    border-block-end-color: CanvasText;
+  }
+
+  .site-header__logo,
+  .site-header__link {
+    color: LinkText;
+  }
+}

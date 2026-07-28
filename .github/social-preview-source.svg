@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title description">
+  <title id="title">A11y Quiz Form social preview</title>
+  <desc id="description">Accessible quiz behavior for progressively enhanced native forms, illustrated with a native single-answer quiz.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#172033" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="640" fill="#f5f6f8"/>
+  <image href="social-preview-texture.jpg" width="1280" height="640" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1280" height="640" fill="#f5f6f8" opacity="0.18"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#172033">
+    <text x="80" y="116" font-size="17" font-weight="700" letter-spacing="2.2" fill="#0d3f72">ACCESSIBLE · TYPESCRIPT · NATIVE HTML</text>
+    <text x="80" y="204" font-size="68" font-weight="800" letter-spacing="-2.5">A11y Quiz Form</text>
+
+    <text x="80" y="270" font-size="29" font-weight="600">
+      <tspan x="80" dy="0">Accessible quiz behavior for</tspan>
+      <tspan x="80" dy="40">progressively enhanced native forms.</tspan>
+    </text>
+
+    <g font-size="16" font-weight="700">
+      <g transform="translate(80 382)">
+        <rect width="230" height="46" rx="23" fill="#ffffff" stroke="#c8d3e1"/>
+        <circle cx="25" cy="23" r="7" fill="#005fcc"/>
+        <text x="43" y="29">Single + multiple answers</text>
+      </g>
+      <g transform="translate(80 442)">
+        <rect width="218" height="46" rx="23" fill="#ffffff" stroke="#c8d3e1"/>
+        <circle cx="25" cy="23" r="7" fill="#1a7f37"/>
+        <text x="43" y="29">Practice · Exam · Review</text>
+      </g>
+      <g transform="translate(80 502)">
+        <rect width="218" height="46" rx="23" fill="#ffffff" stroke="#c8d3e1"/>
+        <circle cx="25" cy="23" r="7" fill="#ffbf47"/>
+        <text x="43" y="29">No framework dependency</text>
+      </g>
+    </g>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="720" y="80" width="480" height="480" rx="28" fill="#ffffff" stroke="#c8d3e1" stroke-width="2"/>
+    <path d="M748 80h424a28 28 0 0 1 28 28v2H720v-2a28 28 0 0 1 28-28Z" fill="#005fcc"/>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#172033">
+    <text x="760" y="145" font-size="14" font-weight="700" letter-spacing="1.5" fill="#0d3f72">NATIVE FORM · SINGLE ANSWER</text>
+    <text x="760" y="194" font-size="28" font-weight="800">
+      <tspan x="760" dy="0">Which HTML element should</tspan>
+      <tspan x="760" dy="34">trigger a form action?</tspan>
+    </text>
+    <text x="760" y="265" font-size="16" fill="#595959">Choose one answer.</text>
+
+    <g transform="translate(760 290)">
+      <rect width="400" height="62" rx="12" fill="#e6f4ea" stroke="#1a7f37" stroke-width="2"/>
+      <circle cx="30" cy="31" r="12" fill="#ffffff" stroke="#1a7f37" stroke-width="2"/>
+      <circle cx="30" cy="31" r="6" fill="#1a7f37"/>
+      <text x="58" y="39" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="700">&lt;button&gt;</text>
+      <circle cx="365" cy="31" r="15" fill="#1a7f37"/>
+      <path d="m358 31 5 5 10-12" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <g transform="translate(760 366)">
+      <rect width="400" height="62" rx="12" fill="#ffffff" stroke="#767676" stroke-width="2"/>
+      <circle cx="30" cy="31" r="12" fill="#ffffff" stroke="#767676" stroke-width="2"/>
+      <text x="58" y="39" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="20">&lt;div&gt;</text>
+    </g>
+
+    <g transform="translate(760 452)">
+      <rect width="400" height="76" rx="10" fill="#f3faf5"/>
+      <rect width="6" height="76" rx="3" fill="#1a7f37"/>
+      <text x="24" y="31" font-size="15" font-weight="700" fill="#0d5723">Correct.</text>
+      <text x="24" y="55" font-size="15" fill="#0d5723">Native semantics and keyboard behavior.</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>Multiple-Answer Scoring Lab | A11y Quiz Form</title>
+    <meta
+      name="description"
+      content="Compare exact and partial scoring with two focused, progressively enhanced checkbox quizzes."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://vmitsaras.github.io/A11y-Quiz-Form/multiple-answer-scoring/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="A11y Quiz Form">
+    <meta property="og:title" content="Multiple-Answer Scoring Lab | A11y Quiz Form">
+    <meta
+      property="og:description"
+      content="Compare exact and partial scoring with two focused, progressively enhanced checkbox quizzes."
+    >
+    <meta property="og:url" content="https://vmitsaras.github.io/A11y-Quiz-Form/multiple-answer-scoring/">
+    <meta property="og:image" content="https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <meta
+      property="og:image:alt"
+      content="A11y Quiz Form social preview showing a progressively enhanced native HTML quiz."
+    >
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Multiple-Answer Scoring Lab | A11y Quiz Form">
+    <meta
+      name="twitter:description"
+      content="Compare exact and partial scoring with two focused, progressively enhanced checkbox quizzes."
+    >
+    <meta name="twitter:image" content="https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png">
+    <meta
+      name="twitter:image:alt"
+      content="A11y Quiz Form social preview showing a progressively enhanced native HTML quiz."
+    >
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/multiple-answer-scoring/#webpage",
+          "url": "https://vmitsaras.github.io/A11y-Quiz-Form/multiple-answer-scoring/",
+          "name": "Multiple-Answer Scoring Lab | A11y Quiz Form",
+          "description": "Compare exact and partial scoring with two focused, progressively enhanced checkbox quizzes.",
+          "inLanguage": "en",
+          "primaryImageOfPage": {
+            "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#primaryimage"
+          },
+          "isPartOf": {
+            "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#webpage"
+          },
+          "mainEntity": {
+            "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/multiple-answer-scoring/#software"
+          },
+          "author": {
+            "@id": "https://github.com/vmitsaras/#person"
+          }
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/#primaryimage",
+          "url": "https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png",
+          "contentUrl": "https://vmitsaras.github.io/A11y-Quiz-Form/social-preview.png",
+          "width": 1280,
+          "height": 640,
+          "caption": "A11y Quiz Form — accessible quiz behavior for progressively enhanced native forms."
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "@id": "https://vmitsaras.github.io/A11y-Quiz-Form/multiple-answer-scoring/#software",
+          "name": "A11y Quiz Form",
+          "description": "Accessible single- and multiple-answer quiz behavior for progressively enhanced native forms",
+          "version": "1.0.0",
+          "codeRepository": "https://github.com/vmitsaras/A11y-Quiz-Form",
+          "license": "https://github.com/vmitsaras/A11y-Quiz-Form/blob/main/LICENSE",
+          "programmingLanguage": [
+            "TypeScript",
+            "JavaScript"
+          ],
+          "runtimePlatform": "Browser",
+          "keywords": [
+            "accessibility",
+            "a11y",
+            "quiz",
+            "form",
+            "progressive enhancement",
+            "multiple answer scoring"
+          ],
+          "featureList": [
+            "Exact and partial multiple-answer scoring",
+            "Matched checkbox quizzes for side-by-side comparison",
+            "Retry feedback, progress, reset, and result announcements",
+            "Native keyboard interaction with Tab and Space"
+          ],
+          "author": {
+            "@id": "https://github.com/vmitsaras/#person"
+          },
+          "targetProduct": {
+            "@type": "SoftwareApplication",
+            "name": "A11y Quiz Form",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Any",
+            "runtimePlatform": "Browser"
+          },
+          "sameAs": [
+            "https://github.com/vmitsaras/A11y-Quiz-Form"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://github.com/vmitsaras/#person",
+          "name": "Vasileios Mitsaras",
+          "url": "https://github.com/vmitsaras/",
+          "sameAs": [
+            "https://github.com/vmitsaras/",
+            "https://linkedin.com/in/vasilis-mitsaras"
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="../dist/styles.css">
+    <link rel="stylesheet" href="../site-header.css">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" data-site-header>
+      <div class="site-header__inner">
+        <a class="site-header__logo" href="../index.html">A11y Quiz Form</a>
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <ul class="site-header__links">
+            <li><a class="site-header__link" href="../index.html#overview">Overview</a></li>
+            <li><a class="site-header__link" href="../index.html#examples">Examples</a></li>
+            <li><a class="site-header__link" href="https://github.com/vmitsaras/A11y-Quiz-Form">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="demo-page" id="main">
+      <header class="demo-hero">
+        <p class="demo-hero__eyebrow">Developer docs lab · Scoring comparison</p>
+        <h1>Multiple-answer scoring lab</h1>
+        <p class="demo-hero__summary">
+          Test the same checkbox question with exact and partial scoring. The matched content
+          makes the scoring rule—not the question—the only meaningful variable.
+        </p>
+      </header>
+
+      <section class="demo-grid" aria-label="Scenario and test instructions">
+        <div class="demo-panel">
+          <h2>Scenario</h2>
+          <p>
+            A course author must choose whether learners need the complete answer set or can
+            demonstrate useful partial knowledge without selecting a wrong answer.
+          </p>
+          <p><strong>User goal:</strong> compare both scoring rules with identical selections.</p>
+        </div>
+
+        <div class="demo-panel">
+          <h2>Try it</h2>
+          <ol class="demo-try-list">
+            <li>Select only “Visible label” in both quizzes, then check each answer.</li>
+            <li>Reset and select all three correct answers to see both modes pass.</li>
+            <li>Select any correct answer plus “Placeholder-only label” to see both modes fail.</li>
+            <li>Use <kbd>Tab</kbd> and <kbd>Space</kbd> to complete the comparison without a pointer.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="demo-stage" aria-labelledby="scoring-title">
+        <h2 id="scoring-title">Side-by-side scoring</h2>
+        <p class="demo-callout">
+          Partial mode accepts a non-empty subset only when every selected answer is correct.
+          It does not award a correct result when a wrong option is included. All-or-nothing is
+          a compatibility alias of exact mode, so these two quizzes cover every distinct rule.
+        </p>
+
+        <div class="demo-grid">
+          <div>
+            <span class="demo-scoring-label">Exact scoring</span>
+            <form
+              class="a11y-quiz"
+              id="exact-scoring-quiz"
+              data-a11y-quiz
+              data-scoring-mode="exact"
+              data-max-attempts="2"
+              data-show-progress="true"
+              novalidate
+            >
+              <fieldset class="a11y-quiz__fieldset">
+                <legend class="a11y-quiz__question">
+                  Which practices give a form control an accessible name?
+                </legend>
+                <p class="a11y-quiz__instruction">Choose all three correct answers.</p>
+                <div class="a11y-quiz__answers">
+                  <div class="a11y-quiz__answer" data-correct="true">
+                    <label class="a11y-quiz__answer-label">
+                      <input class="a11y-quiz__input" type="checkbox" name="exact" value="visible-label">
+                      <span class="a11y-quiz__answer-text">Associate a visible <code>&lt;label&gt;</code></span>
+                    </label>
+                    <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                    <p class="a11y-quiz__explanation" hidden>A programmatically associated label provides a clear name.</p>
+                  </div>
+                  <div class="a11y-quiz__answer" data-correct="true">
+                    <label class="a11y-quiz__answer-label">
+                      <input class="a11y-quiz__input" type="checkbox" name="exact" value="aria-label">
+                      <span class="a11y-quiz__answer-text">Use <code>aria-label</code> when no visible label is appropriate</span>
+                    </label>
+                    <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                    <p class="a11y-quiz__explanation" hidden>An aria-label can provide the name, though visible text is usually easier for everyone.</p>
+                  </div>
+                  <div class="a11y-quiz__answer" data-correct="true">
+                    <label class="a11y-quiz__answer-label">
+                      <input class="a11y-quiz__input" type="checkbox" name="exact" value="labelledby">
+                      <span class="a11y-quiz__answer-text">Reference existing text with <code>aria-labelledby</code></span>
+                    </label>
+                    <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                    <p class="a11y-quiz__explanation" hidden>aria-labelledby can reuse visible text elsewhere in the interface.</p>
+                  </div>
+                  <div class="a11y-quiz__answer" data-correct="false">
+                    <label class="a11y-quiz__answer-label">
+                      <input class="a11y-quiz__input" type="checkbox" name="exact" value="placeholder">
+                      <span class="a11y-quiz__answer-text">Use placeholder text by itself</span>
+                    </label>
+                    <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                    <p class="a11y-quiz__explanation" hidden>A placeholder is not a reliable replacement for a persistent label.</p>
+                  </div>
+                </div>
+                <p class="a11y-quiz__attempt-count" hidden></p>
+                <p class="a11y-quiz__status"></p>
+                <div class="a11y-quiz__actions">
+                  <button type="submit">Check exact answer</button>
+                  <button type="button" data-quiz-show-answer hidden>Show complete answer</button>
+                  <button type="button" data-quiz-reset hidden>Reset exact quiz</button>
+                </div>
+                <div class="a11y-quiz__result-summary" hidden>
+                  <p class="a11y-quiz__result-summary-heading" aria-hidden="true">Exact result</p>
+                  <p class="a11y-quiz__result-summary-text"></p>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+          <div>
+            <span class="demo-scoring-label">Partial scoring</span>
+            <form
+              class="a11y-quiz"
+              id="partial-scoring-quiz"
+              data-a11y-quiz
+              data-scoring-mode="partial"
+              data-max-attempts="2"
+              data-show-progress="true"
+              novalidate
+            >
+              <fieldset class="a11y-quiz__fieldset">
+                <legend class="a11y-quiz__question">
+                  Which practices give a form control an accessible name?
+                </legend>
+                <p class="a11y-quiz__instruction">Choose one or more correct answers and no incorrect answers.</p>
+                <div class="a11y-quiz__answers">
+                  <div class="a11y-quiz__answer" data-correct="true">
+                    <label class="a11y-quiz__answer-label">
+                      <input class="a11y-quiz__input" type="checkbox" name="partial" value="visible-label">
+                      <span class="a11y-quiz__answer-text">Associate a visible <code>&lt;label&gt;</code></span>
+                    </label>
+                    <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                    <p class="a11y-quiz__explanation" hidden>A programmatically associated label provides a clear name.</p>
+                  </div>
+                  <div class="a11y-quiz__answer" data-correct="true">
+                    <label class="a11y-quiz__answer-label">
+                      <input class="a11y-quiz__input" type="checkbox" name="partial" value="aria-label">
+                      <span class="a11y-quiz__answer-text">Use <code>aria-label</code> when no visible label is appropriate</span>
+                    </label>
+                    <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                    <p class="a11y-quiz__explanation" hidden>An aria-label can provide the name, though visible text is usually easier for everyone.</p>
+                  </div>
+                  <div class="a11y-quiz__answer" data-correct="true">
+                    <label class="a11y-quiz__answer-label">
+                      <input class="a11y-quiz__input" type="checkbox" name="partial" value="labelledby">
+                      <span class="a11y-quiz__answer-text">Reference existing text with <code>aria-labelledby</code></span>
+                    </label>
+                    <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                    <p class="a11y-quiz__explanation" hidden>aria-labelledby can reuse visible text elsewhere in the interface.</p>
+                  </div>
+                  <div class="a11y-quiz__answer" data-correct="false">
+                    <label class="a11y-quiz__answer-label">
+                      <input class="a11y-quiz__input" type="checkbox" name="partial" value="placeholder">
+                      <span class="a11y-quiz__answer-text">Use placeholder text by itself</span>
+                    </label>
+                    <p class="a11y-quiz__answer-note" hidden>Previously selected</p>
+                    <p class="a11y-quiz__explanation" hidden>A placeholder is not a reliable replacement for a persistent label.</p>
+                  </div>
+                </div>
+                <p class="a11y-quiz__attempt-count" hidden></p>
+                <p class="a11y-quiz__status"></p>
+                <div class="a11y-quiz__actions">
+                  <button type="submit">Check partial answer</button>
+                  <button type="button" data-quiz-show-answer hidden>Show complete answer</button>
+                  <button type="button" data-quiz-reset hidden>Reset partial quiz</button>
+                </div>
+                <div class="a11y-quiz__result-summary" hidden>
+                  <p class="a11y-quiz__result-summary-heading" aria-hidden="true">Partial result</p>
+                  <p class="a11y-quiz__result-summary-text"></p>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-grid" aria-label="Accessibility and developer notes">
+        <div class="demo-panel">
+          <h2>Accessibility notes</h2>
+          <ul class="demo-note-list">
+            <li>Native fieldsets, legends, labels, checkboxes, and buttons provide the baseline interaction.</li>
+            <li><kbd>Tab</kbd> moves among controls and <kbd>Space</kbd> toggles a focused checkbox.</li>
+            <li>Visible text and live status updates communicate results without relying on color.</li>
+            <li>Focus remains in the current form; no focus is forced into result text.</li>
+            <li>The layout has no required motion and supports forced-colors styling from the package CSS.</li>
+            <li>Partial scoring reports a correct result, not a numeric score or percentage.</li>
+          </ul>
+        </div>
+        <div class="demo-panel">
+          <h2>Developer notes</h2>
+          <p>
+            Each root uses <code>[data-a11y-quiz]</code>. Answer cards use
+            <code>.a11y-quiz__answer</code>, inputs use <code>.a11y-quiz__input</code>, and correct
+            cards carry <code>data-correct="true"</code>.
+          </p>
+          <pre><code>createQuizForm(exactForm, { scoringMode: "exact" });
+createQuizForm(partialForm, { scoringMode: "partial" });</code></pre>
+          <p>The page imports <code>../dist/index.js</code> and <code>../dist/styles.css</code>.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="demo-footer" data-demo-footer>
+      <div class="demo-footer__inner">
+        <div class="demo-footer__brand">
+          <p class="demo-footer__eyebrow">Accessibility plugin demo</p>
+          <p class="demo-footer__credit">
+            <span class="demo-footer__plugin">A11y Quiz Form</span>
+            <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+            Built by <a class="demo-footer__link" href="https://github.com/vmitsaras/">Vasileios Mitsaras</a>
+            <span class="demo-footer__separator" aria-hidden="true">&middot;</span>
+            <a class="demo-footer__link" href="https://linkedin.com/in/vasilis-mitsaras">LinkedIn profile</a>
+          </p>
+          <p class="demo-footer__meta"><span>a11y-quiz-form</span><span class="demo-footer__separator" aria-hidden="true">&middot;</span><span>MIT License</span></p>
+        </div>
+        <nav class="demo-footer__nav" aria-label="Project links">
+          <ul class="demo-footer__links">
+            <li class="demo-footer__item"><a class="demo-footer__link" href="https://github.com/vmitsaras/A11y-Quiz-Form">GitHub repository</a></li>
+            <li class="demo-footer__item"><a class="demo-footer__link" href="https://www.npmjs.com/package/a11y-quiz-form">npm package</a></li>
+            <li class="demo-footer__item"><a class="demo-footer__link" href="https://vmitsaras.github.io/A11y-Quiz-Form/">Documentation</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { createQuizForm } from "../dist/index.js";
+
+      const exactForm = document.querySelector("#exact-scoring-quiz");
+      const partialForm = document.querySelector("#partial-scoring-quiz");
+
+      if (exactForm instanceof HTMLFormElement) {
+        createQuizForm(exactForm, { scoringMode: "exact" });
+      }
+
+      if (partialForm instanceof HTMLFormElement) {
+        createQuizForm(partialForm, { scoringMode: "partial" });
+      }
+    </script>
+  </body>
+</html>
